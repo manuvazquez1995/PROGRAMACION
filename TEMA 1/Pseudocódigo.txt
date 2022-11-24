@@ -1,0 +1,207 @@
+
+*************************************************
+*************************************************
+**                                             **
+**	Estructura de los programas que hacemos.   **
+**                                             **
+**	Inicio									   **
+**											   **
+**		- Variables (Datos que utilizamos)     **
+**		- Datos de entrada.                    **
+**		- Proceso                              **
+**		- Datos de salida.                     **
+**                                             **
+**	Fin                                        **
+**											   **
+*************************************************
+*************************************************
+
+
+******* SUMAR 2 NÚMEROS LEÍDOS POR TECLADO *****
+
+	- Inicio
+	- Leer Nº1 por teclado.
+	- Leer Nº2 por teclado.
+	- Sumar Nº1 + Nº2 y guardar el resultado.
+	- Imprimir por pantalla el resultado.
+	- Fin.
+	
+
+******* SUMAR 100 NÚMEROS LEÍDOS POR TECLADO. *****
+	
+
+
+
+******* DECIDIR CUÁL ES EL MAYOR DE 2 NÚMEROS LEÍDOS POR TECLADO. *****
+	
+	- Inicio
+	- Pedir 2 números por teclado.
+	-Comparar
+		- Comparar distintos
+			si Nº1 > Nº2, 
+				resultado Nº1 mayor
+			sino
+				resultado Nº2 mayor.
+		- Comparar iguales.
+			si Nº1 = Nº2
+			Volver a empezar
+		
+	- Imprimir por pantalla el número mayor.
+	- Fin
+	
+	
+********* DEDIDIR CUÁL ES EL MAYOR DE 2 NÚMEROS LEÍDOS POR TECLADO. *****
+Inicio
+
+*Inicializar Nº1, Nº2 y nº3.
+
+Leer los números por teclado.
+
+Mientras
+--- Comparación de iguales.
+Si n1=n2=n3 --más generico si hay elementos iguales.
+
+-- Volver a empezar 
+leer n1, n2, n3
+
+finMientras 
+
+--- Comparación
+Si n1>n2 and n1>n3 Entonces -- el nº es el mayor.
+
+Escribir "n1 es el mayor"
+	
+	Sino
+	Si n2>n1 and n2>n3 Entonces
+	
+	Escribir "n2 es el mayor"
+	
+		sino
+		
+		escribir "n3 es el mayor"
+	
+	finSI
+	
+finSI
+
+Fin
+
+
+
+
+
+**** EJERCICIOS DIAGRAMA FLUJO Y PSEUDOCÓDIGO ****
+**** Se requiere un algoritmo para obtener la suma de diez cantidades 
+mediante la utilización de un ciclo “Mientras”. ****
+
+INICIO
+
+*Inicializar num
+Hacer num = 0
+*Inicializar suma
+Hacer suma.
+*Inicializar contador
+Hacer C=1
+
+Mientras C <= 0
+
+	leer num
+	hacer suma = suma + num
+	c = c +1 (C++)
+
+finMientras
+
+Escribir suma.
+
+FIN
+
+
+
+**** EJERCICIOS DIAGRAMA FLUJO Y PSEUDOCÓDIGO ****
+**** Se requiere un algoritmo para obtener la edad promedio de un grupo de N alumnos. ****
+
+
+_____ Mientras hacer   ***Falta hacer mientras ***
+
+Inicio
+
+Hacer suma = 0
+Leer numero
+hacer c=1
+
+mientras c<=Numero 
+Leer edadAlumno
+Hacer suma = suma+edadAlumno
+c=c+1
+finMientras
+
+Hacer promedio = suma/Numero
+Escribir promedio
+
+FIN
+
+
+_______Desde / Para    
+
+
+for(c=1; c >= nAlumnos; c++){
+	*Leer edad;
+	int suma = suma + edad;
+				
+}
+
+
+Inicio
+
+Hacer suma = 0
+Leer numero
+
+Desde c=1 hasta c>numero (c++)
+
+	Leer edadAlumno
+	Hacer suma = suma+edadAlumno
+finDesde
+
+Hacer promedio = suma/Numero
+Escribir promedio
+
+FIN
+
+
+
+
+*************************************************************
+Se requiere un algoritmo para obtener la estatura promedio 
+de un grupo de personas, cuyo número de miembros se desconoce, 
+el ciclo debe efectuarse siempre y cuando se tenga una estatura registrada. 
+Estatura registrada (>0)
+
+
+Inicio
+
+Hacer contador = 0
+Hacer estatura = 0
+hacer suma = 0
+hacer promedio = 0
+
+Leer estatura
+
+mientras estatura > 0
+	Hacer suma = suma + estatura
+	contador +1
+	leer estatura
+finMientras
+
+--comprobación que contador sea o no 0
+si contador = 0
+	Escribir "No hay estaturas para el cálculo"
+sino
+	Hacer promedio = suma / contador
+	Mostrar Promedio
+finSi
+
+Fin
+
+
+
+
