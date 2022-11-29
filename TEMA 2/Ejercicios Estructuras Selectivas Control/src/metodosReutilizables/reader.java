@@ -1,7 +1,7 @@
 package metodosReutilizables;
 import java.util.Scanner;
 
-//TODO: lector de datos reutilizables para cualquier proyecto.
+//TODO: lector de datos reutilizables para cualquier proyecto (CON SCANNER).
 public class reader {
 
     static Scanner reader = new Scanner(System.in);

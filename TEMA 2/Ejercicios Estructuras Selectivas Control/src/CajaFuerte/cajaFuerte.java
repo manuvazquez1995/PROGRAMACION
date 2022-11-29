@@ -1,5 +1,6 @@
 package CajaFuerte;
 import metodosReutilizables.*;
+import java.io.IOException;
 
 /*Realiza el control de acceso a una caja fuerte. La combinación será un número de 4 cifras.
 El programa nos pedirá la combinación para abrirla. Si no acertamos,
@@ -9,7 +10,7 @@ Tendremos cuatro oportunidades para abrir la caja fuerte.*/
 
 public class cajaFuerte {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Creamos una constante con un número random de 4 dígitos (también lo mostramos.).
         final int combinacion=generarRandom();
@@ -25,15 +26,13 @@ public class cajaFuerte {
         //Con un bucle for pedimos los números (de 4 dígitos).
         for(int i=1; intentos>0 & !ok; i++){
             System.out.println("Introduce un número (quedan "+intentos+" intentos): ");
-            num=reader.leerInt();
-            reader.nextLine();
+            num=bufferReader.leerInt();
             //Con un bucle while comprobamos si el número introducido tiene 4 dígitos.
             while(method.numEnteroDigitos(num)!=4){ //Método que comprueba si num tiene 4 dígitos.
                 intentos--;
                 System.out.println("El número no es de 4 dígitos. Vuelva a intentarlo: ");
                 System.out.println("Quedan "+intentos+" intentos");
-                num=reader.leerInt();
-                reader.nextLine();
+                num=bufferReader.leerInt();
             }
             /* Con un if comprobamos si el número introducido es coincide con la combinación,
             usando el método sonIntsIguales que comprueba si son iguales.
@@ -51,7 +50,7 @@ public class cajaFuerte {
             }
 
         } //Fin for.
-        reader.close();
+
     } //Fin main.
 
 

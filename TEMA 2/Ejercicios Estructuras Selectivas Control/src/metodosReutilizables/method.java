@@ -42,6 +42,15 @@ public class method {
     }
 
 
+    //Método que comprueba si un número es negativo (para comprobaciones).
+    public static boolean esNegativo(int num){
+        boolean esNeg = false;
+        if(num<0){
+            esNeg = true;
+        }
+        return esNeg;
+    }
+
 
 
 } //Fin clase
