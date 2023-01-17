@@ -32,9 +32,11 @@ public class Ejer_9 {
     //Método que muestra los valores del array.
     public static void mostrarValores(int[] listaNums){
         for(int i=0; i<listaNums.length; i++){
-            switch (i){ //Para que lo muestre en 2 filas y no en 1 porque es incómodo verlo.
-                case 49 -> System.out.println();
-                default -> System.out.print("|"+listaNums[i]);
+            //Para que lo muestre en 2 filas y no en 1 porque es incómodo verlo.
+            if (i == 49) {
+                System.out.println();
+            } else {
+                System.out.print("|" + listaNums[i]);
             }
         }
         System.out.println();
