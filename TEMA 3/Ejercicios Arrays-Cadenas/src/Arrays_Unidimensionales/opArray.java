@@ -1,6 +1,7 @@
 package Arrays_Unidimensionales;
 import metodosReutilizables.bufferReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class opArray {
 
@@ -42,6 +43,27 @@ public class opArray {
             int num = bufferReader.leerInt();
             listaNums[i] = num;
         }
+    }
+
+
+    //TODO: método que rellena todo el array con un único valor usando el método fill de la clase array.
+    //Solo para Ints.
+    public static void rellenarArrayFill(int[] vector, int m){
+        Arrays.fill(vector, m);
+    }
+
+
+    //TODO: método que rellena un array con números aleatorios.
+    public static void rellenarArrayAleatorios(int[] vector){
+        for(int i=0; i<vector.length; i++){
+            vector[i] = (int) (Math.random()*10);
+        }
+    }
+
+
+    //TODO: método que ordena lo valores de un array de ascendentemente.
+    public static void ordenarArray(int[] vector){
+        Arrays.sort(vector);
     }
 
 
@@ -88,6 +110,13 @@ public class opArray {
             vectorInv[vectorInv.length-1-i]=vector[i];
         }
         return vectorInv;
+    }
+
+
+    //TODO: Método que indica si 2 arrays son iguales (solo para Ints).
+    // Los 2 arrays tienen que ser del mismo tamaño, en caso de no ser así, fallará.
+    public static boolean comprobarIgualesInt(int[] vector1, int[] vector2){
+        return Arrays.equals(vector1, vector2); //Devuelve directamente verdadero si son iguales, si no devuelve falso.
     }
 
 
