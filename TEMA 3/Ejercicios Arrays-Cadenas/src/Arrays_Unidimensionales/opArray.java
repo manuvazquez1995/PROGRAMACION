@@ -120,4 +120,16 @@ public class opArray {
     }
 
 
+    //TODO: método que ordena los valores de un array de forma descendente.
+    //Usando también otros métodos de esta clase.
+    public static void ordDescVector(int[] vector){
+        ordenarArray(vector);
+        int[] vectorInv = new int[vector.length];
+        guardarInvArray(vector, vectorInv);
+        for(int i=0; i< vector.length; i++){
+            vector[i] = vectorInv[i];
+        }
+    }
+
+
 }

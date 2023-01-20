@@ -28,6 +28,11 @@ public class Ejer_19 {
         // Mostramos los números del array.
         opArray.mostrarArrayInt(vector);
 
+        // Ordenamos el array con un método.
+        opArray.ordDescVector(vector);
+
+        // Mostramos el array ordenado descendentemente.
+        opArray.mostrarArrayInt(vector);
 
     }
 

@@ -36,11 +36,11 @@ public class Ejer_1 {
             System.out.print("           Columna 0    Columna 1    Columna 2    Columna 3    Columna 4    Columna 5");
             System.out.println();
         for(int i=0; i<matriz.length; i++){
-            System.out.print("Fila "+i+"          "+matriz[i][0]+"         "+matriz[i][1]+"           "+matriz[i][2]+"            "+matriz[i][3]+"           "+matriz[i][4]+"            "+matriz[i][5]);
+            System.out.print("Fila "+i+"          "+matriz[i][0]+"         "+matriz[i][1]+"           " +
+                    ""+matriz[i][2]+"            "+matriz[i][3]+"           "+matriz[i][4]+"            " +
+                    ""+matriz[i][5]);
             System.out.println();
         }
-
-
 
     }
 

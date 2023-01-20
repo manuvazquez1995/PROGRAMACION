@@ -1,10 +1,13 @@
 package Arrays_Unidimensionales;
 
-public class Ejer_14 {
+import java.util.Arrays;
+
+public class Ejer_16 {
 
     /* 16. Crea un programa que cree un array de enteros e introduzca la siguiente secuencia
     de valores: 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, etc. hasta introducir 10 diez veces,
-    y luego la muestre por pantalla. */
+    y luego la muestre por pantalla. En esta ocasión has de utilizar Arrays.fill(). */
+    // TODO: REPASAR PARA ENTENDERLO BIEN.
     public static void main(String[] args) {
 
         // Variables.
@@ -13,17 +16,14 @@ public class Ejer_14 {
 
         // Para "i" desde 1 hasta 10.
         for(int i = 1; i <= 10; i++){
-            //Insertamos i veces el valor "i".
-            for(int j = 1; j <= i; j++){
-                vector[posicionActual] = i;
-                posicionActual++;
-            }
+            Arrays.fill(vector, posicionActual, posicionActual+1, i);
+            posicionActual++;
+
         }
 
         // Mostramos el contenido del array.
         opArray.mostrarArrayInt(vector);
 
     }
-
 
 }
