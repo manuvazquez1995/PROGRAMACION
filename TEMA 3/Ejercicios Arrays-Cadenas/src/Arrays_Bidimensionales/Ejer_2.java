@@ -38,8 +38,7 @@ public class Ejer_2 {
         for(int n : sumasCol){
             sumaTotal = sumaTotal + n; // Para hacer el total de las columnas, guardándolo directamente en sumaTotal.
         }
-
-
+        
         // Mostramos el contenido del array en forma de tabla.
         System.out.println();
         for(int i=0; i<matriz.length; i++){   // Printeamos las filas.
