@@ -8,6 +8,7 @@ public class Ejer_Obj_2 {
     2. Array de objetos Empleado (por defecto se tomarán 10).
     La clase Empleado tendrá los atributos: nombre, apellido, edad y salario.
     Introducir los valores y sacar la suma y la media de los salarios.
+    TODO: añadi por mi cuenta que cada empleado tenga un array de teléfonos y otro de correos.
      */
     public static void main(String[] args) throws IOException {
 
@@ -118,8 +119,6 @@ public class Ejer_Obj_2 {
         System.out.println("############### DATOS SUELDOS ###############");
         System.out.println("- TOTAL SUELDOS: "+sumaSueldos+"\n" +
                 "- MEDIA SUELDOS: "+mediaSueldos);
-
-
 
     }
 
