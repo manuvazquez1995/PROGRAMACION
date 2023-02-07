@@ -19,7 +19,7 @@ public class principal {
         menu();
         int op = bufferReader.leerInt();
 
-        while(op>0) {
+        while(op!=0) {
             switch (op) {
                 case 1 -> {
                     coche c1 = new coche("BMW", "Serie 3", 25000, true,
@@ -51,7 +51,10 @@ public class principal {
                     op = bufferReader.leerInt();
                 }
                 case 4 -> {
-                    //busquedaBin(concesionario, 0, 0, concesionario.length);
+                    ordenarPorPrecio(concesionario);
+                    System.out.println("- Introduzca un precio a buscar: ");
+                    double precioBuscar = bufferReader.leerDouble();
+                    System.out.println(busquedaBin(concesionario, precioBuscar, 0, concesionario.length));
                     menu();
                     op = bufferReader.leerInt();
                 }
@@ -69,23 +72,6 @@ public class principal {
         }
 
 
-
-    }
-
-
-    //Metodo que imprime el menú.
-    static void menu(){
-        System.out.println("""
-                ********* CONCESIONARIO *********
-                (1) Cargar coche.
-                (2) Visualizar listado ordenado de coches.
-                (3) Coche más caro.
-                (4) Hacer búsqueda.
-                (5) Ver todos los coches.
-                (0) Salir.
-                Introduce una opción:
-                """);
-        System.out.println();
     }
 
 

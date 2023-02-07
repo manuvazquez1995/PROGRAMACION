@@ -1,12 +1,8 @@
-package metodosReutilizables;
-
-//Importamos las clases de java que se encargan del lector de datos con BufferedReader.
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//TODO: lector de datos reutilizables para cualquier proyecto (CON BufferedReader).
-public class bufferReader {
+public class bufferedReader {
 
     //Creamos un lector estático que podrá utilizar en cualquier parte del programa.
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

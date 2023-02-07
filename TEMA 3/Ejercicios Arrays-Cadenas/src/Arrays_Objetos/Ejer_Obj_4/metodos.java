@@ -1,8 +1,22 @@
 package Arrays_Objetos.Ejer_Obj_4;
 
-import java.util.Objects;
 
 public class metodos {
+
+    //Método que imprime las opciones del menú.
+    static void menu(){
+        System.out.println("""
+                ********* CONCESIONARIO *********
+                (1) Cargar coche.
+                (2) Visualizar listado ordenado de coches.
+                (3) Coche más caro.
+                (4) Hacer búsqueda.
+                (5) Ver todos los coches.
+                (0) Salir.
+                Introduce una opción:
+                """);
+        System.out.println();
+    }
 
     //Metodo para visualizar el contenido del concesionario.
     public static void mostrarConcesionario(coche[] concesionario){
@@ -21,7 +35,7 @@ public class metodos {
 
 
     // Para ordenar por marca (método burbuja).
-    public static void ordenarPorMarca (coche concesionario[]){
+    public static void ordenarPorMarca (coche[] concesionario){
         boolean ordenado=false;
         int cuentaIntercambios=0;
         //Usamos un bucle anidado, saldra cuando esté ordenado el array
@@ -44,12 +58,11 @@ public class metodos {
             //Inicializamos la variable de nuevo para que empiece a contar de nuevo
             cuentaIntercambios=0;
         }
-
     }
 
 
     // Para ordenar por precio (método burbuja).
-    public static void ordenarPorPrecio(coche concesionario[]){
+    public static void ordenarPorPrecio(coche[] concesionario){
         int cuentaintercambios=0;
         //Usamos un bucle anidado, saldra cuando esté ordenado el array
         for (boolean ordenado=false;!ordenado;){ //Todo: en este se inicializa con un boolean a falso y lo hace mientras siga siendo falso.
@@ -74,7 +87,7 @@ public class metodos {
 
 
     //Busqueda binaria o dicotómica.
-    /*public static int busquedaBin(coche[] sortedArray, int key, int low, int high) {
+    public static int busquedaBin(coche[] sortedArray, double key, int low, int high) {
 
         int index = Integer.MAX_VALUE;
 
@@ -82,17 +95,17 @@ public class metodos {
 
             int mid = (low + high) / 2;
 
-            if (sortedArray[mid] < key) {
+            if (sortedArray[mid].getPrecio_base() < key) {
                 low = mid + 1;
-            } else if (sortedArray[mid] > key) {
+            } else if (sortedArray[mid].getPrecio_base() > key) {
                 high = mid - 1;
-            } else if (sortedArray[mid] == key) {
+            } else if (sortedArray[mid].getPrecio_base() == key) {
                 index = mid;
                 break;
             }
         }
         return index;
-    }*/
+    }
 
 
 
