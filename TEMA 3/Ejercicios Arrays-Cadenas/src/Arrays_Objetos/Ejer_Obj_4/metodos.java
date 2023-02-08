@@ -1,6 +1,8 @@
 package Arrays_Objetos.Ejer_Obj_4;
 
 
+import java.util.Arrays;
+
 public class metodos {
 
     //Método que imprime las opciones del menú.
@@ -87,9 +89,9 @@ public class metodos {
 
 
     //Busqueda binaria o dicotómica.
-    public static int busquedaBin(coche[] sortedArray, double key, int low, int high) {
+    public static int busquedaBin(coche[] sortedArray, int key, int low, int high) {
 
-        int index = Integer.MAX_VALUE;
+        int index = -1;
 
         while (low <= high) {
 
@@ -107,6 +109,26 @@ public class metodos {
         return index;
     }
 
+
+    public static int busquedaBinMarca(coche[] sortedArray, String  key, int low, int high) {
+
+        int index = Integer.MAX_VALUE;
+
+        while (low <= high) {
+
+            int mid = (low + high) / 2;
+
+            if (sortedArray[mid].getMarca().compareToIgnoreCase(key) < 0) {
+                low = mid + 1;
+            } else if (sortedArray[mid].getMarca().compareToIgnoreCase(key) > 0) {
+                high = mid - 1;
+            } else if (sortedArray[mid].getMarca().compareToIgnoreCase(key) == 0) {
+                index = mid;
+                break;
+            }
+        }
+        return index;
+    }
 
 
 }

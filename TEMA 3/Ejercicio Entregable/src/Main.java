@@ -25,21 +25,21 @@ public class Main {
                     op = bufferedReader.leerInt();
                 }
                 case 3 -> {}
-                case 4 -> {}
-                case 5 -> {}
+                case 4 -> {
+                    //TODO: FUNCIONA
+                    methods.verEstadisticas(listaAlumnos);
+                    methods.menu();
+                    op = bufferedReader.leerInt();
+                }
+                case 5 -> {
+                    //TODO: FUNCIONA
+                    methods.verSuspensos(listaAlumnos);
+                    methods.menu();
+                    op = bufferedReader.leerInt();
+                }
             }
-
-
         }
-
-
-
-
+        System.out.println("FIN DEL PROGRAMA, ADIÓS");
     }
-
-
-
-
-
 
 }

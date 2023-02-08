@@ -52,7 +52,46 @@ public class methods {
     public static void verNotas(alumno[] listaAlumnos){
         System.out.println("***** LISTA DE ALUMNOS ******");
         for(int i=0; listaAlumnos[i]!=null ; i++){
-            System.out.println("- "+listaAlumnos[i].getNombre()+": "+listaAlumnos[i].getNota());
+            System.out.println("NOTA "+i+": "+listaAlumnos[i].getNombre()+" "+listaAlumnos[i].getNota());
+        }
+        System.out.println();
+    }
+
+
+    // Método que muestra las estadísticas (nota media de todos los alumnos, nota máxima y la mínima).
+    public static void verEstadisticas(alumno[] listaAlumnos){
+        // En el mismo bucle sumamos para hacer la media, buscamos la nota máxima y la mínima.
+        int suma = 0;
+        int media;
+        int contAlumnos = 0; // Para contar el número de alumnos, ya que el array puede no estar completo.
+        int notaMax = listaAlumnos[0].getNota();
+        int notaMin = listaAlumnos[0].getNota();
+        for(int i=0; listaAlumnos[i]!=null; i++){
+            suma = suma + listaAlumnos[i].getNota();
+            contAlumnos++;
+            if(listaAlumnos[i].getNota()>notaMax){
+                notaMax = listaAlumnos[i].getNota();
+            }
+            if(listaAlumnos[i].getNota()<notaMin){
+                notaMin = listaAlumnos[i].getNota();
+            }
+        }
+        media = suma / contAlumnos;
+        // Mostramos los resultados.
+        System.out.println("***** ESTADÍSTICAS *****");
+        System.out.println("- MEDIA: "+media);
+        System.out.println("- MÁXIMA: "+notaMax);
+        System.out.println("- MÍNIMA: "+notaMin);
+    }
+
+
+    // Método que muestra una lista con los alumnos que han suspendido.
+    public static void verSuspensos(alumno[] listaAlumnos){
+        System.out.println("***** SUSPENSOS *****");
+        for(int i=0; listaAlumnos[i]!=null; i++){
+            if(listaAlumnos[i].getNota()<5){
+                System.out.println("- "+listaAlumnos[i].getNombre()+": "+listaAlumnos[i].getNota());
+            }
         }
         System.out.println();
     }
@@ -71,8 +110,8 @@ public class methods {
     // Comprobar si la lista de alumnos está llena.
     static boolean arrayIsFull(alumno[] listaAlumnos){
         boolean isFull = true;
-        for(int i = 0; i<listaAlumnos.length; i++){
-            if (listaAlumnos[i] == null) {
+        for (alumno listaAlumno : listaAlumnos) {
+            if (listaAlumno == null) {
                 isFull = false;
                 break;   // En el momento que encuentra una posición vacía en el array, rompe y ya devuelve false.
             }

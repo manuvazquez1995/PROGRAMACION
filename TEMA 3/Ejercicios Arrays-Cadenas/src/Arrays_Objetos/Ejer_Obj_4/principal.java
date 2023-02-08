@@ -51,10 +51,13 @@ public class principal {
                     op = bufferReader.leerInt();
                 }
                 case 4 -> {
-                    ordenarPorPrecio(concesionario);
-                    System.out.println("- Introduzca un precio a buscar: ");
-                    double precioBuscar = bufferReader.leerDouble();
-                    System.out.println(busquedaBin(concesionario, precioBuscar, 0, concesionario.length));
+                    //ordenarPorPrecio(concesionario);
+                    //System.out.println("- Introduzca un precio a buscar: ");
+                    //int precioBuscar = bufferReader.leerInt();
+                    //int cod = metodos.runBinarySearchIteratively(concesionario, precioBuscar, 0, concesionario.length-1);
+                    //System.out.println(cod);
+                    int cod = busquedaBinMarca(concesionario, "BMW", 0, concesionario.length-1);
+                    System.out.println(cod);
                     menu();
                     op = bufferReader.leerInt();
                 }

@@ -4,7 +4,7 @@ public class coche {
 
     private String marca;
     private String modelo;
-    private double precio_base;
+    private int precio_base;
     private boolean aire_acondicionado;
     private boolean cierre_central;
     private boolean pintura_metalizada;
@@ -12,7 +12,7 @@ public class coche {
 
     public coche(String marca,
                  String modelo,
-                 double precio_base,
+                 int precio_base,
                  boolean aire_acondicionado,
                  boolean cierre_central,
                  boolean pintura_metalizada,
@@ -46,7 +46,7 @@ public class coche {
         return precio_base;
     }
 
-    public void setPrecio_base(double precio_base) {
+    public void setPrecio_base(int precio_base) {
         this.precio_base = precio_base;
     }
 
