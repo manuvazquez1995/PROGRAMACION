@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class metodos {
 
     //Método que imprime las opciones del menú.
-    static void menu(){
+    public static void menu(){
         System.out.println("""
                 ********* CONCESIONARIO *********
                 (1) Cargar coche.
@@ -63,8 +63,8 @@ public class metodos {
     }
 
 
-    // Para ordenar por precio (método burbuja).
-    public static void ordenarPorPrecio(coche[] concesionario){
+    // Para ordenar por precio DE MAYOR A MENOR (método burbuja).
+    public static void ordenarPorPrecioMaxMin(coche[] concesionario){
         int cuentaintercambios=0;
         //Usamos un bucle anidado, saldra cuando esté ordenado el array
         for (boolean ordenado=false;!ordenado;){ //Todo: en este se inicializa con un boolean a falso y lo hace mientras siga siendo falso.
@@ -88,8 +88,33 @@ public class metodos {
     }
 
 
+    // Para ordenar por precio DE MENOR A MAYOR para la búsqueda dicotómica (método burbuja).
+    public static void ordenarPorPrecioMinMax(coche[] concesionario){
+        int cuentaintercambios=0;
+        //Usamos un bucle anidado, saldra cuando esté ordenado el array
+        for (boolean ordenado=false;!ordenado;){ //Todo: en este se inicializa con un boolean a falso y lo hace mientras siga siendo falso.
+            for (int i=0;i<concesionario.length-1;i++){
+                if (concesionario[i].getPrecio_base()>concesionario[i+1].getPrecio_base()){
+                    //Intercambiamos valores
+                    coche variableauxiliar=concesionario[i];
+                    concesionario[i]=concesionario[i+1];
+                    concesionario[i+1]=variableauxiliar;
+                    //indicamos que hay un cambio
+                    cuentaintercambios++;
+                }
+            }
+            //Si no hay intercambios, es que esté ordenado.
+            if (cuentaintercambios==0){
+                ordenado=true;
+            }
+            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
+            cuentaintercambios=0;
+        }
+    }
+
+
     //Busqueda binaria o dicotómica.
-    public static int busquedaBin(coche[] sortedArray, int key, int low, int high) {
+    public static int busquedaBinPrecio(coche[] sortedArray, int key, int low, int high) {
 
         int index = -1;
 
