@@ -51,13 +51,33 @@ public class principal {
                     op = bufferReader.leerInt();
                 }
                 case 4 -> {
-                    ordenarPorPrecioMinMax(concesionario);
-                    System.out.println("- Introduzca un precio a buscar: ");
-                    int precioBuscar = bufferReader.leerInt();
-                    int cod = metodos.busquedaBinPrecio(concesionario, precioBuscar, 0, concesionario.length-1);
-                    //System.out.println(cod);
-                    //int cod = busquedaBinMarca(concesionario, "BMW", 0, concesionario.length-1);
-                    System.out.println(cod);
+                    menuBusqueda();
+                    int opBus = bufferReader.leerInt();
+                    while(opBus!=3){
+                        switch (opBus){
+                            case 1 -> {
+                                System.out.println("Introduce el nombre del vehículo que desea buscar: ");
+                                String nombreMarca = bufferReader.leerString();
+                                ordenarPorMarca(concesionario); // Para que funcione la búsqueda por marca, se debe ordenar los elementos del array por orden alfabético.
+                                busquedaBinMarca(concesionario, nombreMarca, 0, concesionario.length-1);
+                                menuBusqueda();
+                                opBus = bufferReader.leerInt();
+                            }
+                            case 2 -> {
+                                System.out.println("Introduce el precio del vehículo que desea buscar: ");
+                                int precioBuscar = bufferReader.leerInt();
+                                ordenarPorPrecioMinMax(concesionario); // Para que funcione la búsqueda por precio, se debe ordenar por precio de menor a mayor.
+                                busquedaBinPrecio(concesionario, precioBuscar, 0, concesionario.length-1);
+                                menuBusqueda();
+                                opBus = bufferReader.leerInt();
+                            }
+                            default -> {
+                                System.err.println("- Opción no válida. Introduce una opción correcta: ");
+                                menuBusqueda();
+                                opBus = bufferReader.leerInt();
+                            }
+                        }
+                    }
                     menu();
                     op = bufferReader.leerInt();
                 }
