@@ -3,7 +3,7 @@ import metodosReutilizables.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class methods {
+class methods {
 
     // Método para imprimir las opciones del menú.
     public static void menu(){
@@ -55,6 +55,66 @@ public class methods {
 
     // Método que muestra los productos almacenados.
     public static void mostrarProductos(ArrayList<producto> productos){
+        if(productos.isEmpty()){
+            System.err.println("No hay productos en la lista.");
+        }else {
+            System.out.println("***** LISTA DE PRODUCTOS *****");
+            for (producto p : productos) {
+                System.out.println("- Producto: " + p.getNombre());
+                System.out.println("- Precio Vigo: " + p.getPrecioVigo());
+                System.out.println("- Precio Santiago: " + p.getPrecioSantiago());
+                System.out.println("- Precio Madrid: " + p.getPrecioMadrid());
+                System.out.println();
+            }
+        }
+    }
+
+
+    // Para calcular la media de cada producto en las tres ciudades y mostrarlo por pantalla.
+    public static void calcMediaProd(ArrayList<producto> productos){
+        System.out.println("***** MEDIA PRECIO DE CADA PRODUCTOS *****");
+        for(producto p : productos){
+            float suma = 0;
+            float media = 0;
+            suma = p.getPrecioMadrid()+p.getPrecioVigo()+p.getPrecioSantiago();
+            media = suma / 3;
+            System.out.println("- "+p.getNombre()+": "+media);
+        }
+        System.out.println();
+    }
+
+
+    // TODO: ESTO ES PROVISIONAL.
+    // Para ordenar por nombre del producto, orden alfabético (método burbuja).
+    public static void ordenarPorNombreProducto (ArrayList<producto> productos){
+        boolean ordenado=false;
+        int cuentaIntercambios=0;
+        //Usamos un bucle anidado, saldra cuando esté ordenado el array
+        while(!ordenado){
+            for(int i=0;i<productos.size()-1;i++){
+                // TODO: en este caso, compareToIgnoreCase sirve para comparar si dos palabras son iguales.
+                if (productos.get(i).getNombre().compareToIgnoreCase(productos.get(i+1).getNombre())>0){
+                    //Intercambiamos valores
+                    producto aux = productos.get(i);
+                    productos.set(i, productos.get(i+1));
+                    productos.set(i+1, aux);
+                    //indicamos que hay un cambio
+                    cuentaIntercambios++;
+                }
+            }
+            //Si no hay intercambios, es que está ordenado.
+            if (cuentaIntercambios==0){
+                ordenado=true;
+            }
+            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
+            cuentaIntercambios=0;
+        }
+    }
+
+
+    // Mostrar los productos ordenados por nombre.
+    public static void mostrarListaOrdenadaNombre(ArrayList<producto> productos){
+        ordenarPorNombreProducto(productos);
         if(productos.isEmpty()){
             System.err.println("No hay productos en la lista.");
         }else {

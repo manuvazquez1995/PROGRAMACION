@@ -5,7 +5,7 @@ import metodosReutilizables.*;
 
 import static Arrays_Objetos.Ejer_Obj_4.metodos.menu;
 
-public class principal {
+class principal {
 
     /*
     Realizar un programa que cree una colección dinámica de tipo ArrayList, de objetos de la clase Producto y realice los métodos:
@@ -39,8 +39,17 @@ public class principal {
                     methods.menu();
                     op = bufferReader.leerInt();
                 }
-                case 3 -> {}
-                case 4 -> {}
+                case 3 -> {
+                    methods.calcMediaProd(productos);
+                    methods.menu();
+                    op = bufferReader.leerInt();
+                }
+                case 4 -> {
+                    //TODO: el método de ordenación es provisional (burbuja), se va a implementar otro tipo de implementación.
+                    methods.mostrarListaOrdenadaNombre(productos);
+                    methods.menu();
+                    op = bufferReader.leerInt();
+                }
                 case 5 -> {
                     methods.buscador(productos);
                     methods.menu();

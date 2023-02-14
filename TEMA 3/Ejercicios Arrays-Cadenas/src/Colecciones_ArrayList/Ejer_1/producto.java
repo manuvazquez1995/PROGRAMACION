@@ -1,6 +1,6 @@
 package Colecciones_ArrayList.Ejer_1;
 
-public class producto {
+class producto {
 
     private String nombre;
     private float precioVigo;
