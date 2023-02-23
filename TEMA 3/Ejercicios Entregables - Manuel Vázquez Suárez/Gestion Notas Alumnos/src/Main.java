@@ -15,33 +15,38 @@ public class Main {
             switch (op){
 
                 case 1 -> {
-                    // TODO: FUNCIONA.
+                    // Opción que muestra las notas de los alumnos.
                     methods.verNotas(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
 
                 case 2 -> {
-                    // TODO: FUNCIONA.
+                    // Opción que añade los alumnos con sus respectivas notas.
                     methods.crearAlumno(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
                 case 3 -> {
-                    // TODO: FUNCIONA.
+                    // Opción que sirve para borrar un alumno con su nota asociada.
                     methods.borrarAlumno(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
                 case 4 -> {
-                    // TODO: FUNCIONA.
+                    // Muestra las estadísticas de los alumnos.
                     methods.verEstadisticas(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
                 case 5 -> {
-                    // TODO: FUNCIONA.
+                    // Muestra una lista de alumnos suspensos.
                     methods.verSuspensos(listaAlumnos);
+                    methods.menu();
+                    op = bufferedReader.leerInt();
+                }
+                default -> {
+                    System.err.println("Opción no válida, introduce una correcta: ");
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }

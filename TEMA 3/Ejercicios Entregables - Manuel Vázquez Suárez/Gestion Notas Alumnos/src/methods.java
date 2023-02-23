@@ -12,7 +12,7 @@ public class methods {
                 (2) Añadir notas.
                 (3) Borrar nota.
                 (4) Estadísticas.
-                (5) Ver suspendidos.
+                (5) Ver suspensos.
                 (6) Salir
                 """);
     }
@@ -91,13 +91,12 @@ public class methods {
             // Con un método comprobamos si existe el alumno, en el caso de existir lo borra. Si no indica que no existe.
             if (inList(listaAlumnos, nombre)) {
                 listaAlumnos.removeIf(alumno -> alumno.getNombre().equals(nombre));
+                System.out.println("El alumno "+nombre+" se eliminó correctamente.");
             } else {
                 System.err.println("El alumno no existe.");
             }
         }
     }
-
-
 
 
     // Método que muestra las estadísticas (nota media de todos los alumnos, nota máxima y la mínima).
@@ -148,6 +147,7 @@ public class methods {
         }
     }
 
+
     // Método que comprueba si un alumno está en la lista. Recibe el nombre como parámetro.
     public static boolean inList(ArrayList<alumno> listaAlumnos, String nombre){
         boolean inList = false;
@@ -160,6 +160,7 @@ public class methods {
         }
         return inList;
     }
+
 
     // Comprobar si la lista de alumnos está llena, es decir, que ya tiene los 100 alumnos de máximo.
     static boolean arrayIsFull(ArrayList<alumno> listaAlumnos){
