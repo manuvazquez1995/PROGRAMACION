@@ -1,10 +1,11 @@
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
         // Array de objetos donde guardamos los alumnos con sus notas.
-        alumno[] listaAlumnos = new alumno[5];
+        ArrayList<alumno> listaAlumnos = new ArrayList<>();
 
         // Menu.
         methods.menu();
@@ -12,27 +13,34 @@ public class Main {
 
         while(op!=6){
             switch (op){
-                //TODO: FUNCIONA
+
                 case 1 -> {
+                    // TODO: FUNCIONA.
                     methods.verNotas(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
-                //TODO: FUNCIONA
+
                 case 2 -> {
+                    // TODO: FUNCIONA.
                     methods.crearAlumno(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
-                case 3 -> {}
+                case 3 -> {
+                    // TODO: FUNCIONA.
+                    methods.borrarAlumno(listaAlumnos);
+                    methods.menu();
+                    op = bufferedReader.leerInt();
+                }
                 case 4 -> {
-                    //TODO: FUNCIONA
+                    // TODO: FUNCIONA.
                     methods.verEstadisticas(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();
                 }
                 case 5 -> {
-                    //TODO: FUNCIONA
+                    // TODO: FUNCIONA.
                     methods.verSuspensos(listaAlumnos);
                     methods.menu();
                     op = bufferedReader.leerInt();

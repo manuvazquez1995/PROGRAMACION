@@ -13,7 +13,7 @@ public class coche extends vehiculo implements interfaz1{
         System.out.println(nombre);
         System.out.println(cv);
         System.out.println(combustible);
-        interfaz1.calculaConsumo(cv);
+        //interfaz1.calculaConsumo(cv);
     }
 
 
