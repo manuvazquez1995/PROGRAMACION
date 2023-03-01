@@ -37,7 +37,7 @@ public class Canario extends Ave{
 
 
     public void mostrar(){
-        System.out.println("***** MASCOTA *****\n" +
+        System.out.println("***** CANARIO *****\n" +
                 "- Nombre: "+this.getNombre()+"\n" +
                 "- Edad: "+this.getEdad()+"\n" +
                 "- Estado: "+this.getEdad()+"\n" +
@@ -50,15 +50,15 @@ public class Canario extends Ave{
 
 
     public void habla(){
-        System.out.println("Solo canta, no habla.");
+        System.out.println("- Habla: Solo canta, no habla.");
     }
 
 
     public void volar(){
         if(!getVuela()){
-            System.out.println("NO VUELA");
+            System.out.println("- Vuela: no vuela");
         }else{
-            System.out.println("SI VUELA");
+            System.out.println("- Vuela: si vuela");
         }
     }
 

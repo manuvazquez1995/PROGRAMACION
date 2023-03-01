@@ -37,7 +37,7 @@ public class Loro extends Ave{
 
 
     public void mostrar(){
-        System.out.println("***** MASCOTA *****\n" +
+        System.out.println("***** LORO *****\n" +
                 "- Nombre: "+this.getNombre()+"\n" +
                 "- Edad: "+this.getEdad()+"\n" +
                 "- Estado: "+this.getEdad()+"\n" +
@@ -58,9 +58,9 @@ public class Loro extends Ave{
 
     public void volar(){
         if(!getVuela()){
-            System.out.println("NO VUELA");
+            System.out.println("- Vuela: no vuela");
         }else{
-            System.out.println("SI VUELA");
+            System.out.println("- Vuela: si vuela");
         }
     }
 

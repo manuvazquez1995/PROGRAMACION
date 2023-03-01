@@ -31,7 +31,7 @@ public class Gato extends Mascota{
 
 
     public void mostrar(){
-        System.out.println("***** MASCOTA *****\n" +
+        System.out.println("***** GATO *****\n" +
                 "- Nombre: "+this.getNombre()+"\n" +
                 "- Edad: "+this.getEdad()+"\n" +
                 "- Estado: "+this.getEdad()+"\n" +

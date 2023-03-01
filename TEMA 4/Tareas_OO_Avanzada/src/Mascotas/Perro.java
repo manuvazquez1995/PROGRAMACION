@@ -30,7 +30,7 @@ public class Perro extends Mascota{
 
 
     public void mostrar(){
-        System.out.println("***** MASCOTA *****\n" +
+        System.out.println("***** PERRO *****\n" +
                         "- Nombre: "+this.getNombre()+"\n" +
                         "- Edad: "+this.getEdad()+"\n" +
                         "- Estado: "+this.getEstado()+"\n" +
@@ -41,7 +41,7 @@ public class Perro extends Mascota{
 
 
     public void habla(){
-        System.out.println("GUAU GUAU");
+        System.out.println("-Habla: GUAU GUAU");
     }
 
 
