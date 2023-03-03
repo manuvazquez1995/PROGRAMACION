@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4da5a7b5-2bf3-419d-9db9-7d2553be2bc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Concesionario - Manuel Vazquez Suarez.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/Ejercicio Entregable.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/src/alumno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/src/bufferedReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/src/methods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gestion Notas Alumnos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Gestion Notas Alumnos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Canario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Canario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Gato.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Gato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Inventario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Loro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Loro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Perro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Perro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +31,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/manu/Documents/CS DAW/PROGRAMACION/TEMA 3/Ejercicios Entregables - Manuel Vázquez Suárez/Concesionario/src"
+    "last_opened_file_path": "F:/PROGRAMACION/TEMA 3/Ejercicios Entregables - Manuel Vázquez Suárez/Concesionario"
   }
 }]]></component>
   <component name="RecentsManager">

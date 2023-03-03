@@ -38,11 +38,12 @@ public class Gato extends Mascota{
                 "- Fecha nacimiento: "+this.getFechaNacimiento()+"\n" +
                 "- Color: "+this.getColor()+"\n" +
                 "- Pelo largo: "+this.getPeloLargo());
+        habla();
     }
 
 
     public void habla(){
-        System.out.println("MIAU MIAU");
+        System.out.println("- Habla: MIAU MIAU");
     }
 
 

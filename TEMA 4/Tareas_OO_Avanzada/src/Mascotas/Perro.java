@@ -37,6 +37,7 @@ public class Perro extends Mascota{
                         "- Fecha nacimiento: "+this.getFechaNacimiento()+"\n" +
                         "- Raza: "+this.getRaza()+"\n" +
                         "- Pulgas: "+this.getPulgas());
+        habla();
     }
 
 

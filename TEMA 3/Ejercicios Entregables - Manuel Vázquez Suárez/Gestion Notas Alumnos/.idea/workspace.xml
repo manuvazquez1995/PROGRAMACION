@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb6ffabf-93da-4681-8c1d-5ffeb5601d7c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Canario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Canario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Gato.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Gato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Inventario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Loro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Loro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Perro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Perro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../TEMA 4/Tareas_OO_Avanzada/src/Mascotas/methods.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +28,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/PROGRAMACION/TEMA 3/Ejercicios Entregables - Manuel Vázquez Suárez/Gestion Notas Alumnos"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/PROGRAMACION/TEMA 3/Ejercicios Entregables - Manuel Vázquez Suárez/Gestion Notas Alumnos&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\manu\Documents\CS DAW\PROGRAMACION\TEMA 3\Ejercicios Entregables - Manuel Vázquez Suárez\Gestion Notas Alumnos\src" />

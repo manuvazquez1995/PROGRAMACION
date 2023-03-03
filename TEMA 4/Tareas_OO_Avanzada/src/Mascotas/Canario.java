@@ -46,6 +46,8 @@ public class Canario extends Ave{
                 "- Puede volar: "+this.getVuela()+"\n" +
                 "- Color: "+this.getColor()+"\n" +
                 "- Puede cantar: "+this.getCanta());
+        habla();
+        volar();
     }
 
 

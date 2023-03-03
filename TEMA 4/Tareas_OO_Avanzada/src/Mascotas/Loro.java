@@ -46,6 +46,7 @@ public class Loro extends Ave{
                 "- Puede volar: "+this.getVuela()+"\n" +
                 "- Origen: "+this.getOrigen()+"\n" +
                 "- Puede hablar: "+this.getHabla());
+        volar();
     }
 
     public void habla(){};

@@ -33,7 +33,12 @@ public class Principal {
                         inventario.menuOp();
                         op = bufferReader.leerInt();
                     }
-                    case 5 -> {}
+                    case 5 -> {
+
+                        inventario.borrarAnimal();
+                        inventario.menuOp();
+                        op = bufferReader.leerInt();
+                    }
                     case 6 -> {
                         // TODO: FUNCIONA
                         inventario.vaciarInventario();
