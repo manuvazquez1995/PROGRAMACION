@@ -88,7 +88,7 @@ public class Inventario {
             String n = bufferReader.leerString();
             ordenarAnimales(); //Antes de hacer la búsqueda, ordena la lista por orden alfabético.
             if(!buscarAnimal(n)){
-                System.out.println("NO EXISTE");
+                System.out.println("NO EXISTE EL ANIMAL");
             }else{
                 System.out.println("EXISTE");
             }
