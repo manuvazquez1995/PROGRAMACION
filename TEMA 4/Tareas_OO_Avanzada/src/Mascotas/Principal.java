@@ -1,16 +1,16 @@
 package Mascotas;
-import metodosReutilizables.bufferReader;
+//import metodosReutilizables.bufferReader;
 import java.io.IOException;
 
-public class Principal {
+public class Principal implements iTeclado{
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  throws IOException {
 
         Inventario inventario = new Inventario();
 
 
             inventario.menuOp();
-            int op = bufferReader.leerInt();
+            int op = Integer.parseInt(bf.readLine());  // En estos casos se implementa la interfaz iTeclado.
 
             while(op!=0){
                 switch (op){
@@ -18,38 +18,38 @@ public class Principal {
                         // TODO: FUNCIONA
                         inventario.mostrarListaSimple();
                         inventario.menuOp();
-                        op = bufferReader.leerInt();
+                        op = Integer.parseInt(bf.readLine());
                     }
                     case 2 -> {}
                     case 3 -> {
                         // TODO: FUNCIONA
                         inventario.mostrarListaCompleta();
                         inventario.menuOp();
-                        op = bufferReader.leerInt();
+                        op = Integer.parseInt(bf.readLine());
                     }
                     case 4 -> {
                         // TODO: FUNCIONA
                         inventario.insertarAnimales();
                         inventario.menuOp();
-                        op = bufferReader.leerInt();
+                        op = Integer.parseInt(bf.readLine());
                     }
                     case 5 -> {
 
                         inventario.borrarAnimal();
                         inventario.menuOp();
-                        op = bufferReader.leerInt();
+                        op = Integer.parseInt(bf.readLine());
                     }
                     case 6 -> {
                         // TODO: FUNCIONA
                         inventario.vaciarInventario();
                         inventario.menuOp();
-                        op = bufferReader.leerInt();
+                        op = Integer.parseInt(bf.readLine());
                     }
                     default -> {
                         // TODO: FUNCIONA
                         System.err.println("Opción no válida, vuelva a intentarlo.");
                         inventario.menuOp();
-                        op = bufferReader.leerInt();
+                        op = Integer.parseInt(bf.readLine());
                     }
                 }
             }
@@ -57,6 +57,7 @@ public class Principal {
 
 
     }
+
 
 
 }

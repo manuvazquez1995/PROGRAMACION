@@ -3,13 +3,14 @@ import metodosReutilizables.bufferReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Objects;
 
 
 public class Inventario {
 
 
     // ArrayList para guardar una lista de mascotas.
-    private static final ArrayList<Mascota> inventario = new ArrayList<>();
+    private static final ArrayList<Animal> inventario = new ArrayList<>();
 
 
     // Método que muestra las opciones del menú.
@@ -35,7 +36,7 @@ public class Inventario {
             System.err.println("* No hay animales en la lista, insértelos por favor.");
         }else {
             System.out.println("****** LISTA SIMPLE DE ANIMALES ******");
-            for (Mascota i : inventario) {
+            for (Animal i : inventario) {
                 if (i instanceof Perro) {
                     System.out.println("* PERRO: " + i.getNombre());
                 } else if (i instanceof Gato) {
@@ -57,7 +58,7 @@ public class Inventario {
             System.err.println("* No hay animales en la lista, insértelos por favor.");
         }else {
             System.out.println("****** LISTA COMPLETA DE LOS ANIMALES ******");
-            for (Mascota i : inventario) {
+            for (Animal i : inventario) {
                 i.mostrar();   // Mostramos los datos de cada uno de los animales, usando un método que está en sus respetivas clases.
                 System.out.println();
             }
@@ -68,13 +69,28 @@ public class Inventario {
 
     // Método que inserta animales en la lista.
     public void insertarAnimales(){
-        inventario.add(new Perro("Toby", 5, "Vivo", "21/11/2018", "Pastor alemán", false));
-        inventario.add(new Gato("Onix", 2, "Enfermo", "25/06/2021", "Marrón", false));
-        inventario.add(new Gato("Pepe", 2, "Enfermo", "25/06/2021", "Marrón", false));
-        inventario.add(new Loro("Paco", 1, "Muerto", "02/02/2022", "Corto", false, "México", false));
-        inventario.add(new Canario("Chacho", 1, "Vivo", "01/01/2022", "Largo", true, "Amarillo", true));
+
+        // Datos de las revisiones del perro.
+        Animal a1 = new Perro("Toby", 5, "Vivo", "21/11/2018", "Pastor alemán", false);
+
+
+        Animal a2 = new Gato("Onix", 2, "Enfermo", "25/06/2021", "Marrón", false);
+        Animal a3 =new Gato("Pepe", 2, "Enfermo", "25/06/2021", "Marrón", false);
+        Animal a4 = new Loro("Paco", 1, "Muerto", "02/02/2022", "Corto", false, "México", false);
+        Animal a5 = new Canario("Chacho", 1, "Vivo", "01/01/2022", "Largo", true, "Amarillo", true);
+
+        inventario.add(a1);
+        inventario.add(a2);
+        inventario.add(a3);
+        inventario.add(a4);
+        inventario.add(a5);
         System.out.println("* Animales añadidos *");
         System.out.println();
+    }
+
+    // Método para añadir revisión a un perro.
+    public void addRevisionPerro(Perro p){
+
     }
 
 
@@ -87,7 +103,7 @@ public class Inventario {
             System.out.println("Introduce nombre: ");
             String n = bufferReader.leerString();
             ordenarAnimales(); //Antes de hacer la búsqueda, ordena la lista por orden alfabético.
-            if(!buscarAnimal(n)){
+            if(buscarAnimal(n)==Integer.MAX_VALUE){
                 System.out.println("NO EXISTE EL ANIMAL");
             }else{
                 System.out.println("EXISTE");
@@ -111,13 +127,21 @@ public class Inventario {
 
     // Método que ordena por orden alfabético los animales (por nombre).
     public void ordenarAnimales(){
-            inventario.sort(Comparator.comparing(Mascota::getNombre)); // Una forma de ordenar un arrayList.
+            inventario.sort(Comparator.comparing(Animal::getNombre)); // Una forma de ordenar un arrayList.
     }
 
 
     // Método que busca devuelve true si existe un determinado animal en la lista, false si no.
-    public boolean buscarAnimal(String key){
-        boolean ok = false;
+    public int buscarAnimal(String nombre){
+        int index = Integer.MAX_VALUE;
+        for(int i = 0;i < inventario.size(); i++){
+            if(Objects.equals(inventario.get(i).getNombre(), nombre)){
+                index = i;
+            }
+        }
+        return index;
+
+        /* boolean ok = false;
         int index = Integer.MAX_VALUE;
         int low = 0;
         int high = inventario.size()-1;
@@ -133,30 +157,9 @@ public class Inventario {
             }
         }
         if(index!=Integer.MAX_VALUE) ok = true;
-        return ok;
+        return ok;*/
     }
-    // Método que busca devuelve pos si existe un determinado animal en la lista.
-    /*public int buscarAnimal(String key){
-        // boolean ok = false;
-        int pos = 0;
-        //ordenaciónArrayList();
-        int index = Integer.MAX_VALUE;
-        int low = 0;
-        int high = inventario.size()-1;
-        while (low<=high){
-            int mid = (low + high) / 2;
-            if(inventario.get(mid).getNombre().compareTo(key)<0){
-                low = mid + 1;
-            } else if (inventario.get(mid).getNombre().compareTo(key)>0) {
-                low = mid - 1;
-            } else if (inventario.get(mid).getNombre().compareTo(key)==0) {
-                index = mid;
-                break;
-            }
-        }
-        if(index!=Integer.MAX_VALUE)  pos = index;
-        return pos;
-    }*/
+
 
 
 

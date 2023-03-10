@@ -1,6 +1,6 @@
 package Mascotas;
 
-public abstract class Ave extends Mascota{
+public abstract class Ave extends Animal{
 
     private String pico;
     private boolean vuela;
