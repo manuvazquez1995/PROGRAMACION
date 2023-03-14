@@ -39,6 +39,14 @@ public class Inventario {
             for (Animal i : inventario) {
                 if (i instanceof Perro) {
                     System.out.println("* PERRO: " + i.getNombre());
+                    if(((Perro) i).getRevisiones().isEmpty()){
+                        System.err.println("- Este perro no tiene historial de revisiones.");
+                    }else{
+                        System.out.println("Repetida\t Fecha\t Vacuna");
+                        for(HistorialRevisiones h : ((Perro) i).getRevisiones()){
+                            System.out.print(h.isRepetida()+"\t "+h.getFecha()+"\t "+h.isVacuna());
+                        }
+                    }
                 } else if (i instanceof Gato) {
                     System.out.println("* GATO: " + i.getNombre());
                 } else if (i instanceof Loro) {
@@ -61,6 +69,18 @@ public class Inventario {
             for (Animal i : inventario) {
                 i.mostrar();   // Mostramos los datos de cada uno de los animales, usando un método que está en sus respetivas clases.
                 System.out.println();
+                if (i instanceof Perro) {
+                    if (((Perro) i).getRevisiones().isEmpty()) {
+                        System.out.println("- Este perro no tiene historial de revisiones.");
+                        System.out.println();
+                    } else {
+                        System.out.println("Repetida\t Fecha\t Vacuna");
+                        for (HistorialRevisiones h : ((Perro) i).getRevisiones()) {
+                            System.out.println(h.isRepetida() + "\t " + h.getFecha() + "\t " + h.isVacuna());
+                        }
+                        System.out.println();
+                    }
+                }
             }
             System.out.println();
         }
@@ -71,7 +91,8 @@ public class Inventario {
     public void insertarAnimales(){
 
         // Datos de las revisiones del perro.
-        Animal a1 = new Perro("Toby", 5, "Vivo", "21/11/2018", "Pastor alemán", false);
+        Animal a1 = new Perro("Toby", 5, "Vivo", "21/11/2018", "Pastor alemán", false,
+                false, " ", false);
 
 
         Animal a2 = new Gato("Onix", 2, "Enfermo", "25/06/2021", "Marrón", false);
@@ -86,11 +107,6 @@ public class Inventario {
         inventario.add(a5);
         System.out.println("* Animales añadidos *");
         System.out.println();
-    }
-
-    // Método para añadir revisión a un perro.
-    public void addRevisionPerro(Perro p){
-
     }
 
 
@@ -140,27 +156,7 @@ public class Inventario {
             }
         }
         return index;
-
-        /* boolean ok = false;
-        int index = Integer.MAX_VALUE;
-        int low = 0;
-        int high = inventario.size()-1;
-        while (low<=high){
-            int mid = (low + high) / 2;
-            if(inventario.get(mid).getNombre().compareTo(key)<0) {
-                low = mid + 1;
-            } else if (inventario.get(mid).getNombre().compareTo(key)>0) {
-                low = mid - 1;
-            } else if (inventario.get(mid).getNombre().compareTo(key)==0) {
-                index = mid;
-                break;
-            }
-        }
-        if(index!=Integer.MAX_VALUE) ok = true;
-        return ok;*/
     }
-
-
 
 
 

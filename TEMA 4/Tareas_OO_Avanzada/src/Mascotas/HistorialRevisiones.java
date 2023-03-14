@@ -4,12 +4,12 @@ import java.time.LocalDateTime;
 public class HistorialRevisiones {
 
     private boolean repetida;
-    private LocalDateTime fecha;
+    private String fecha;
 
     private boolean vacuna;
 
 
-    public HistorialRevisiones(boolean repetida, LocalDateTime fecha, boolean vacuna) {
+    public HistorialRevisiones(boolean repetida, String fecha, boolean vacuna) {
         this.repetida = repetida;
         this.fecha = fecha;
         this.vacuna = vacuna;
@@ -23,11 +23,11 @@ public class HistorialRevisiones {
         this.repetida = repetida;
     }
 
-    public LocalDateTime getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

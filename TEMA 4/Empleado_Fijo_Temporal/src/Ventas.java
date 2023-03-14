@@ -1,0 +1,2 @@
+public class Ventas {
+}
