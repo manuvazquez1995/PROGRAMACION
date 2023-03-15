@@ -3,12 +3,12 @@ import java.util.Date;
 public class EmpFijo extends Empleado {
 
     private int salarioBase;
-    private float irpf;
+    private float irpf = 21;
     private int trienios;
 
 
     // Constructor parametrizado, junto con los parámetros de la clase padre.
-    public EmpFijo(String nss, String nombre, Date fechaNacimiento, char sexo, int salarioBase,  int trienios) {
+    public EmpFijo(String nss, String nombre, String fechaNacimiento, char sexo, int salarioBase,  int trienios) {
         super(nss, nombre, fechaNacimiento, sexo);
         this.salarioBase = salarioBase;
         this.trienios = trienios;

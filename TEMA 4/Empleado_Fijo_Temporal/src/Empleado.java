@@ -4,7 +4,7 @@ public abstract class Empleado {
 
     private String nss;
     private String nombre;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private char sexo;
 
 
@@ -13,7 +13,7 @@ public abstract class Empleado {
 
 
     // Constructor parametrizado.
-    public Empleado(String nss, String nombre, Date fechaNacimiento, char sexo) {
+    public Empleado(String nss, String nombre, String fechaNacimiento, char sexo) {
         this.nss = nss;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -37,11 +37,11 @@ public abstract class Empleado {
         this.nombre = nombre;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

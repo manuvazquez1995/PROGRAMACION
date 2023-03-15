@@ -3,15 +3,16 @@ import java.util.Date;
 
 public class EmpTemporal extends Empleado {
 
-    private Date fechaInicio;
-    private Date fechaFin;
+    private String fechaInicio;
+    private String fechaFin;
     private Double precioDia;
+    private int importeVentas;
 
     private ArrayList<Ventas> ventas;
 
 
     // Constructor parametrizado que se trae también los parámetros del constructor padre.
-    public EmpTemporal(String nss, String nombre, Date fechaNacimiento, char sexo, Date fechaInicio, Date fechaFin, Double precioDia, ArrayList<Ventas> ventas) {
+    public EmpTemporal(String nss, String nombre, String fechaNacimiento, char sexo, String fechaInicio, String fechaFin, Double precioDia, ArrayList<Ventas> ventas) {
         super(nss, nombre, fechaNacimiento, sexo);
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
@@ -21,19 +22,19 @@ public class EmpTemporal extends Empleado {
 
 
     // Getters y setters.
-    public Date getFechaInicio() {
+    public String getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
+    public void setFechaInicio(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public String getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(String fechaFin) {
         this.fechaFin = fechaFin;
     }
 
@@ -47,6 +48,14 @@ public class EmpTemporal extends Empleado {
 
     public ArrayList<Ventas> getVentas() {
         return ventas;
+    }
+
+    public int getImporteVentas() {
+        return importeVentas;
+    }
+
+    public void setImporteVentas(int importeVentas) {
+        this.importeVentas = importeVentas;
     }
 
     public void setVentas(ArrayList<Ventas> ventas) {
