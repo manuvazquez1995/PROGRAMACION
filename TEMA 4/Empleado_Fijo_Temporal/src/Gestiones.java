@@ -1,10 +1,11 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public class Gestiones implements iTeclado{
 
-    // TODO: métodos que sirven para gestionar el main del la app, así como la gestión de los empleados.
+    // TODO: métodos que sirven para gestionar el main de la app, así como la gestión de los empleados.
 
     //Métodos que imprimen las opciones de los menús.
     //Menú principal.
@@ -37,9 +38,37 @@ public class Gestiones implements iTeclado{
     }
 
 
+    // Menú con las opciones de visualizar empleados.
+    public static void menuVisualizar(){
+        System.out.println("""
+                ****** MENÚ VISUALIZAR ******
+                (1) Ver los empleados en activo.
+                (2) Ver todos los empleados (activos/bajas).
+                (0) Volver atrás.
+                
+                Escoja una opción.
+                
+                """);
+    }
+
+
+    // Menú que muestra las opciones de ModificarEmpleados.
+    public static void menuModEmpleados(){
+        System.out.println("""
+                ****** MENÚ MODIFICAR EMPLEADOS ******
+                (1) Modificar empleado fijo.
+                (2) Modificar empleado temporal.
+                (0) Volver atrás.
+                
+                Escoja una opción.
+                
+                """);
+    }
+
+
 
     // Método que dá de alta un empleado fijo o temporal.
-    public static void alta(ArrayList<Empleado> empleAct, ArrayList<Empleado> empleBaja) throws IOException {
+    public static void alta(ArrayList<Empleado> empleAct) throws IOException {
         menuAltas();
         int op = Integer.parseInt(bf.readLine());
 
@@ -99,7 +128,7 @@ public class Gestiones implements iTeclado{
                     String fechaNac = bf.readLine();
                     while (!Validaciones.validarFecha(fechaNac)){
                         System.err.println("La fecha no cumple con los requisitos de validación.");
-                        System.out.println("Vuelva a otra fecha: ");
+                        System.out.println("Vuelva a introducir otra fecha: ");
                         fechaNac = bf.readLine();
                     }
                     System.out.println("- Introduce su sexo (H/M) en mayúscula: ");
@@ -111,9 +140,27 @@ public class Gestiones implements iTeclado{
                         s = bf.readLine();
                         sexo = s.charAt(0);
                     }
+                    System.out.println("- Introduzca la fecha de inicio del contrato: ");
+                    String fechaInicio = bf.readLine();
+                    while (!Validaciones.validarFecha(fechaInicio)){
+                        System.err.println("La fecha no cumple con los requisitos de validación.");
+                        System.out.println("Vuelva a introducir otra fecha: ");
+                        fechaInicio = bf.readLine();
+                    }
+                    System.out.println("- Introduzca la fecha de finalización del contrato: ");
+                    String fechaFin = bf.readLine();
+                    while (!Validaciones.validarFecha(fechaFin)){
+                        System.err.println("La fecha no cumple con los requisitos de validación.");
+                        System.out.println("Vuelva a introducir otra fecha: ");
+                        fechaFin = bf.readLine();
+                    }
+                    System.out.println("- Introduzca el importe de salario diario: ");
+                    double precioDia = Double.parseDouble(bf.readLine());
 
-                    
+                    empleAct.add(new EmpTemporal(ns, nombre, fechaNac, sexo, fechaInicio, fechaFin, precioDia));
 
+                    menuAltas();
+                    op = Integer.parseInt(bf.readLine());
                 }
 
                 default -> {
@@ -123,6 +170,12 @@ public class Gestiones implements iTeclado{
                 }
             }
         }
+    }
+
+
+    // Método que ordena alfabéticamente los empleados por nombre.
+    public static void ordenarEmpNombre(ArrayList<Empleado> emple){
+        emple.sort(Comparator.comparing(Empleado::getNombre)); // Una forma de ordenar un arrayList.
     }
 
 

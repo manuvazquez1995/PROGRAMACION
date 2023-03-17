@@ -8,16 +8,15 @@ public class EmpTemporal extends Empleado {
     private Double precioDia;
     private int importeVentas;
 
-    private ArrayList<Ventas> ventas;
+    private ArrayList<Ventas> ventas = new ArrayList<>();
 
 
     // Constructor parametrizado que se trae también los parámetros del constructor padre.
-    public EmpTemporal(String nss, String nombre, String fechaNacimiento, char sexo, String fechaInicio, String fechaFin, Double precioDia, ArrayList<Ventas> ventas) {
+    public EmpTemporal(String nss, String nombre, String fechaNacimiento, char sexo, String fechaInicio, String fechaFin, Double precioDia) {
         super(nss, nombre, fechaNacimiento, sexo);
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.precioDia = precioDia;
-        this.ventas = ventas;
     }
 
 
@@ -66,6 +65,8 @@ public class EmpTemporal extends Empleado {
     public float sueldo(){
         return 2000;   //No está completo, ya que hay que calcular los días que trabaja y multiplicarlo por el precio día.
     }
+
+
 
 
 }
