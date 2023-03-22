@@ -17,6 +17,7 @@ public class Gestiones implements iTeclado{
                 (3) Dar de baja un empleado.
                 (4) Modificar los datos de un empleado.
                 (5) Visualizar los datos de los empleados.
+                (6) Consultas ventas temporales.
                 (0) Salir.
                 
                 Escoja una opción.

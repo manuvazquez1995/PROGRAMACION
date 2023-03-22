@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+    // TODO: ESTÁ BIEN, NO HAY NADA QUE CORREGIR.
+
 public class BajasEmpleados implements iTeclado{
 
     // Método para dar de baja un empleado.

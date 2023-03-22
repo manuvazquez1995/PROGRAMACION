@@ -74,11 +74,18 @@ public class AltasVentas implements iTeclado{
                         v.add(venta);  // Añadimos a la lista auxiliar de ventas la nueva venta.
                         emp.setVentas(v);  // Devolvemos la venta al objeto del empleado.
 
+                        // Sumamos las ventas que tiene en tota para actualizar el importe ventas del empleado.
+                        double sumaVentas = 0; // Se guarda la suma para sumaVentas del empleado.
+                        for(Ventas ve : emp.getVentas()){
+                            sumaVentas = sumaVentas + ve.getImporteVenta();
+                        }
+                        int sumaV = (int) sumaVentas;
+                        emp.setImporteVentas(sumaV);
+
                         // Lo añadimos a la lista de ventas del empleado temporal.
-                        Empleado empV = (EmpTemporal) emp;
                         for(Empleado e : empleAct){
-                            if(Objects.equals(e.getNss(), empV.getNss())){
-                                e = empV;
+                            if(Objects.equals(e.getNss(), emp.getNss())){
+                                e = emp;
                                 break;
                             }
                         }

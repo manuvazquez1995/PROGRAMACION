@@ -46,8 +46,9 @@ public class Main implements iTeclado {
                                 opMod = Integer.parseInt(bf.readLine());
                             }
                             case 2 ->{
-                                //TODO: ACABAR ESTO.
-
+                                ModificarEmpleados.modEmpTemp(empleAct);
+                                Gestiones.menuModEmpleados();
+                                opMod = Integer.parseInt(bf.readLine());
                             }
                             default -> {
                                 System.err.println("- Opción no válida, vuela a intentarlo.");
@@ -84,6 +85,10 @@ public class Main implements iTeclado {
                     }
                     Gestiones.menu();
                     op = Integer.parseInt(bf.readLine());
+                }
+
+                case 6 -> {
+                    // TODO: FALTA CONSULTAS DE LOS EMPLEADOS TEMPORALES CON MÁS DE 10.000 € EN VENTAS.
                 }
 
                 default -> {

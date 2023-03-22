@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Visualizar {
 
@@ -42,7 +41,7 @@ public class Visualizar {
             for (Empleado e : emple) {
                 if (e instanceof EmpTemporal) {
                     System.out.println(e.getNombre() + "\t    " + ((EmpTemporal) e).getFechaInicio() + "" +
-                            "\t    " + ((EmpTemporal) e).getFechaFin() + "\t    " + e.sueldo());
+                            "\t    " + ((EmpTemporal) e).getFechaFin() + "\t    " + ((EmpTemporal) e).getPrecioDia());
                     System.out.println("VENTAS: ");
                     if(((EmpTemporal) e).getVentas().isEmpty()){
                         System.out.println("- No tiene ventas asignadas.");
