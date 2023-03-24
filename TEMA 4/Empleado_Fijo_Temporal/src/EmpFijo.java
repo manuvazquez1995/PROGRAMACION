@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class EmpFijo extends Empleado {
 
     private int salarioBase;
@@ -43,11 +41,10 @@ public class EmpFijo extends Empleado {
     // Método sueldo().
     @Override
     public float sueldo(){
-        float sueldo;
-        sueldo = (float) salarioBase + (30 * trienios) * (1-irpf);
-        return sueldo;
+        float sueldoBruto = (float) salarioBase + (30 * trienios);
+        float imp = sueldoBruto * (irpf/100);
+        return sueldoBruto - imp;
     }
-
 
 
 }

@@ -1,8 +1,9 @@
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Main implements iTeclado {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
 
         // Declaramos los arrayLists donde se guardarán los empleados.
         ArrayList<Empleado> empleAct = new ArrayList<>();
@@ -24,13 +25,13 @@ public class Main implements iTeclado {
                 }
 
                 case 2 ->{
-                    AltasVentas.altaVenta(empleAct);
+                    Gestiones.altaVenta(empleAct);
                     Gestiones.menu();
                     op = Integer.parseInt(bf.readLine());
                 }
 
                 case 3 ->{
-                    BajasEmpleados.baja(empleAct,empleBaja);
+                    Gestiones.baja(empleAct,empleBaja);
                     Gestiones.menu();
                     op = Integer.parseInt(bf.readLine());
                 }
@@ -41,12 +42,12 @@ public class Main implements iTeclado {
                     while (opMod!=0){
                         switch (opMod){
                             case 1 ->{
-                                ModificarEmpleados.modEmpFijo(empleAct);
+                                Gestiones.modEmpFijo(empleAct);
                                 Gestiones.menuModEmpleados();
                                 opMod = Integer.parseInt(bf.readLine());
                             }
                             case 2 ->{
-                                ModificarEmpleados.modEmpTemp(empleAct);
+                                Gestiones.modEmpTemp(empleAct);
                                 Gestiones.menuModEmpleados();
                                 opMod = Integer.parseInt(bf.readLine());
                             }
@@ -67,12 +68,12 @@ public class Main implements iTeclado {
                     while (opVisualizar!=0){
                         switch (opVisualizar){
                             case 1 -> {
-                                Visualizar.visualiza(empleAct);
+                                Gestiones.visualiza(empleAct);
                                 Gestiones.menuVisualizar();
                                 opVisualizar = Integer.parseInt(bf.readLine());
                             }
                             case 2 -> {
-                                Visualizar.visualiza(empleAct, empleBaja);
+                                Gestiones.visualiza(empleAct, empleBaja);
                                 Gestiones.menuVisualizar();
                                 opVisualizar = Integer.parseInt(bf.readLine());
                             }
@@ -87,11 +88,11 @@ public class Main implements iTeclado {
                     op = Integer.parseInt(bf.readLine());
                 }
 
-                case 6 -> {
+                case 6 ->{
                     // TODO: FALTA CONSULTAS DE LOS EMPLEADOS TEMPORALES CON MÁS DE 10.000 € EN VENTAS.
                 }
 
-                default -> {
+                default ->{
                     System.err.println("- Opción no válida, vuela a intentarlo.");
                     Gestiones.menu();
                     op = Integer.parseInt(bf.readLine());

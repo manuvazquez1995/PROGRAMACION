@@ -1,3 +1,5 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -62,11 +64,18 @@ public class EmpTemporal extends Empleado {
     }
 
     @Override
-    public float sueldo(){
-        return 2000;   //No está completo, ya que hay que calcular los días que trabaja y multiplicarlo por el precio día.
+    public float sueldo() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        Date f1 = sdf.parse(fechaInicio);
+        Date f2 = sdf.parse(fechaFin);
+
+        float dias = (f2.getTime() - f1.getTime())/(1000*60*60*24);
+
+        float pDia = precioDia.floatValue();
+
+        return dias * pDia;
     }
-
-
 
 
 }

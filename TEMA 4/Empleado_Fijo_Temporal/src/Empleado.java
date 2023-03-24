@@ -1,3 +1,4 @@
+import java.text.ParseException;
 import java.util.Date;
 
 public abstract class Empleado {
@@ -55,7 +56,7 @@ public abstract class Empleado {
 
 
     // Método abstracto sueldo.
-    public abstract float sueldo();
+    public abstract float sueldo() throws ParseException;
 
 
 }

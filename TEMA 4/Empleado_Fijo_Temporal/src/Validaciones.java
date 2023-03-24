@@ -24,6 +24,12 @@ public class Validaciones {
     }
 
 
+    // Método para validar si la fecha de fin de contrato de un empleado temporal es mayor que la fecha de inicio de contrato.
+    /*public static boolean comprobarFechaEmpleTemp(String ){
+
+    }
+*/
+
 
 
 

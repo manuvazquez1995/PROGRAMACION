@@ -34,7 +34,7 @@ public class Principal implements iTeclado{
                         op = Integer.parseInt(bf.readLine());
                     }
                     case 5 -> {
-
+                        // TODO: QUEDA POR COMPLETAR.
                         inventario.borrarAnimal();
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
