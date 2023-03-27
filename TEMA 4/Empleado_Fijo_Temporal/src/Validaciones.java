@@ -1,3 +1,7 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Validaciones {
 
     // TODO: esta clase contendrá los métodos que sirven para hacer diversas validaciones.
@@ -24,12 +28,22 @@ public class Validaciones {
     }
 
 
-    // Método para validar si la fecha de fin de contrato de un empleado temporal es mayor que la fecha de inicio de contrato.
-    /*public static boolean comprobarFechaEmpleTemp(String ){
+    // Validar que la fecha de una venta está comprendida entre la fecha de inicio de contrato y final de contrato.
+    public static boolean validarFechaVenta(String fechaIni, String fechaFin, String fechaVen) throws ParseException {
+        boolean ok = true;
 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        Date fIni = sdf.parse(fechaIni);
+        Date fFin = sdf.parse(fechaFin);
+        Date fVen = sdf.parse(fechaVen);
+
+        if(fVen.before(fIni) | fVen.after(fFin)){
+            ok = false;
+        }
+
+        return ok;
     }
-*/
-
 
 
 

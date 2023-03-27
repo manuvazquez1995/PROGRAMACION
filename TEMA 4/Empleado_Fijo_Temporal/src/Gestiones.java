@@ -236,7 +236,7 @@ public class Gestiones implements iTeclado{
             for (Empleado e : emple) {
                 if (e instanceof EmpTemporal) {
                     System.out.println(e.getNombre() + "\t    " + ((EmpTemporal) e).getFechaInicio() + "" +
-                            "\t    " + ((EmpTemporal) e).getFechaFin() + "\t    " + ((EmpTemporal) e).getPrecioDia());
+                            "\t    " + ((EmpTemporal) e).getFechaFin() + "\t    " + e.sueldo());
                     System.out.println("VENTAS: ");
                     if(((EmpTemporal) e).getVentas().isEmpty()){
                         System.out.println("- No tiene ventas asignadas.");
@@ -495,7 +495,7 @@ public class Gestiones implements iTeclado{
 
 
     //TODO: Método que da de alta las ventas de un empleado temporal concreto.
-    public static void altaVenta(ArrayList<Empleado> empleAct) throws IOException {
+    public static void altaVenta(ArrayList<Empleado> empleAct) throws IOException, ParseException {
 
         if(empleAct.isEmpty()){
             System.out.println("** No hay empleados en activo.");
@@ -552,6 +552,18 @@ public class Gestiones implements iTeclado{
                             System.out.println("La fecha no cumple con los requisitos de validación.");
                             System.out.println("Vuelva a introducir otra fecha: ");
                             fechaVenta = bf.readLine();
+                        }
+                        /* Validamos si la fecha de venta está comprendida entre la fecha de inicio y fin del contrato del empleado.
+                        De no ser así, vuelve a pedir de nuevo la fecha. */
+                        while(!Validaciones.validarFechaVenta(emp.getFechaInicio(), emp.getFechaFin(), fechaVenta)){
+                            System.out.println("** La fecha no puede ser antes del inicio del contrato o después.");
+                            System.out.print(" - Introduce la fecha de la venta: ");
+                            fechaVenta = bf.readLine();
+                            while (!Validaciones.validarFecha(fechaVenta)){
+                                System.out.println("La fecha no cumple con los requisitos de validación.");
+                                System.out.println("Vuelva a introducir otra fecha: ");
+                                fechaVenta = bf.readLine();
+                            }
                         }
                         System.out.println("- Introduce el importe de la venta: ");
                         double importeVenta = Double.parseDouble(bf.readLine());
