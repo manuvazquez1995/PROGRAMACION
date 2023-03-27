@@ -1,5 +1,4 @@
 package Mascotas;
-//import metodosReutilizables.bufferReader;
 import java.io.IOException;
 
 public class Principal implements iTeclado{
@@ -15,38 +14,42 @@ public class Principal implements iTeclado{
             while(op!=0){
                 switch (op){
                     case 1 -> {
-                        // TODO: FUNCIONA
+                        // Mostramos una lista simple de animales.
                         inventario.mostrarListaSimple();
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
                     }
-                    case 2 -> {}
+                    case 2 -> {
+                        // Mostramos los datos de un animal concreto (buscamos por nombre).
+                        inventario.mostrarAnimal();
+                        inventario.menuOp();
+                        op = Integer.parseInt(bf.readLine());
+                    }
                     case 3 -> {
-                        // TODO: FUNCIONA
+                        // Mostramos una lista completa de animales.
                         inventario.mostrarListaCompleta();
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
                     }
                     case 4 -> {
-                        // TODO: FUNCIONA
+                        // Insertamos animales (no pedimos los datos).
                         inventario.insertarAnimales();
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
                     }
                     case 5 -> {
-                        // TODO: QUEDA POR COMPLETAR.
+                        // Borramos un animal concreto del inventario (buscamos por nombre).
                         inventario.borrarAnimal();
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
                     }
                     case 6 -> {
-                        // TODO: FUNCIONA
+                        // Vaciamos el inventario.
                         inventario.vaciarInventario();
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
                     }
                     default -> {
-                        // TODO: FUNCIONA
                         System.err.println("Opción no válida, vuelva a intentarlo.");
                         inventario.menuOp();
                         op = Integer.parseInt(bf.readLine());
@@ -54,10 +57,7 @@ public class Principal implements iTeclado{
                 }
             }
             System.out.println("FIN DEL PROGRAMA, HASTA LUEGO.");
-
-
     }
-
 
 
 }

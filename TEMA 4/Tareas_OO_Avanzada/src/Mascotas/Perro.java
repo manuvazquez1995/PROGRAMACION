@@ -12,7 +12,7 @@ public class Perro extends Animal{
     private ArrayList<HistorialRevisiones> revisiones = new ArrayList<>();
 
 
-    public Perro(String nombre, int edad, String estado, String fechaNacimiento, String raza, boolean pulgas, boolean rep, String fechaR, boolean vac){
+    public Perro(String nombre, int edad, String estado, String fechaNacimiento, String raza, boolean pulgas, boolean rep, String fechaR, String vac){
         super(nombre, edad, estado, fechaNacimiento);
         this.raza = raza;
         this.pulgas = pulgas;

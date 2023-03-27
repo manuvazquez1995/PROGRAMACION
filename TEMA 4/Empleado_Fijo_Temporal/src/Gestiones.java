@@ -5,11 +5,12 @@ import java.util.Comparator;
 import java.util.Objects;
 
 
+// TODO: métodos que sirven para gestionar el main de la app, así como la gestión de los empleados.
+
 public class Gestiones implements iTeclado{
 
-    // TODO: métodos que sirven para gestionar el main de la app, así como la gestión de los empleados.
 
-    //Métodos que imprimen las opciones de los menús.
+    //TODO: Métodos que imprimen las opciones de los menús.
     //Menú principal.
     public static void menu(){
         System.out.println("""
@@ -85,7 +86,7 @@ public class Gestiones implements iTeclado{
 
 
 
-    // Método que dá de alta un empleado fijo o temporal.
+    //TODO: Método que dá de alta un empleado fijo o temporal.
     public static void alta(ArrayList<Empleado> empleAct) throws IOException {
         menuAltas();
         int op = Integer.parseInt(bf.readLine());
@@ -191,13 +192,13 @@ public class Gestiones implements iTeclado{
     }
 
 
-    // Método que ordena alfabéticamente los empleados por nombre.
+    //TODO: Método que ordena alfabéticamente los empleados por nombre.
     public static void ordenarEmpNombre(ArrayList<Empleado> emple){
         emple.sort(Comparator.comparing(Empleado::getNombre)); // Una forma de ordenar un arrayList.
     }
 
 
-    // Método que muestra los empleados en activo, tanto fijos como temporales.
+    //TODO: Método que muestra los empleados en activo, tanto fijos como temporales.
     public static void visualiza(ArrayList<Empleado> empleAct) throws ParseException {
         if(empleAct.isEmpty()){
             System.out.println("** No hay empleados en activo.");
@@ -218,7 +219,7 @@ public class Gestiones implements iTeclado{
     }
 
 
-    // Método que muestra
+    //TODO: Método que muestra todos los empleados, tanto los activos como los dados de baja.
     public static void visualiza(ArrayList<Empleado> emple, ArrayList<Empleado> empleBaja) throws ParseException {
         if(emple.isEmpty()){
             System.out.println("** No hay empleados en activo.");
@@ -283,7 +284,7 @@ public class Gestiones implements iTeclado{
     }
 
 
-    // Método para modificar un empleado fijo.
+    //TODO: Método para modificar un empleado fijo.
     public static void modEmpFijo(ArrayList<Empleado> empleAct) throws IOException {
 
         // Pedimos al usuario un NSS para escoger cuál modificar.
@@ -383,7 +384,7 @@ public class Gestiones implements iTeclado{
 
 
 
-    // Método para modificar un empleado temporal.
+    //TODO: Método para modificar un empleado temporal.
     public static void modEmpTemp(ArrayList<Empleado> empleAct) throws IOException {
 
         // Pedimos al usuario un NSS para escoger cuál modificar.
@@ -436,7 +437,7 @@ public class Gestiones implements iTeclado{
     }
 
 
-    // Método para dar de baja un empleado.
+    //TODO: Método para dar de baja un empleado.
     public static void baja(ArrayList<Empleado> empleAct, ArrayList<Empleado> empleBaja) throws IOException {
         if(empleAct.isEmpty()){
             System.out.println("** No hay empleados en activo.");
@@ -493,7 +494,7 @@ public class Gestiones implements iTeclado{
     }
 
 
-    // Método que da de alta las ventas de un empleado temporal concreto.
+    //TODO: Método que da de alta las ventas de un empleado temporal concreto.
     public static void altaVenta(ArrayList<Empleado> empleAct) throws IOException {
 
         if(empleAct.isEmpty()){
@@ -541,15 +542,15 @@ public class Gestiones implements iTeclado{
                     System.out.println("- Empleado con NSS-"+nss+" encontrado: ");
                     System.out.println("- "+emp.getNombre()+"\t "+emp.getNss());
                     System.out.println();
-                    System.out.println("¿Seguro que quiere modificarlo? (s -> aceptar, cualquier tecla -> cancela): ");
+                    System.out.println("¿Seguro que quiere añadirle una venta? (s -> aceptar, cualquier tecla -> cancela): ");
                     String op = bf.readLine();
                     char opc = op.charAt(0);
                     if(opc=='s'){
                         System.out.print(" - Introduce la fecha de la venta: ");
                         String fechaVenta = bf.readLine();
                         while (!Validaciones.validarFecha(fechaVenta)){
-                            System.err.println("La fecha no cumple con los requisitos de validación.");
-                            System.out.println("Vuelva a otra fecha: ");
+                            System.out.println("La fecha no cumple con los requisitos de validación.");
+                            System.out.println("Vuelva a introducir otra fecha: ");
                             fechaVenta = bf.readLine();
                         }
                         System.out.println("- Introduce el importe de la venta: ");
@@ -581,6 +582,27 @@ public class Gestiones implements iTeclado{
                 }
             }
         }
+    }
+
+
+    // TODO: Método que muestra los empleados temporales con un total de ventas superior a 10.000 €.
+    public static void consultarTemp(ArrayList<Empleado> empleAct){
+        if(empleAct.isEmpty()){
+            System.out.println("** No hay empleados en activo.");
+            System.out.println();
+        }else {
+            System.out.println("******* CONSULTAS VENTAS *********");
+            for (Empleado e : empleAct) {
+                if (e instanceof EmpTemporal) {
+                    if (((EmpTemporal) e).getImporteVentas() > 10000) {
+                        System.out.println("NSS\t       Nombre\t       Total");
+                        System.out.println("================================");
+                        System.out.println(e.getNss() + "\t  " + e.getNombre() + "\t  " + ((EmpTemporal) e).getImporteVentas() + "€");
+                    }
+                }
+            }
+        }
+        System.out.println();
     }
 
 

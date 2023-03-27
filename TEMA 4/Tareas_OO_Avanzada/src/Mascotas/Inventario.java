@@ -39,14 +39,6 @@ public class Inventario {
             for (Animal i : inventario) {
                 if (i instanceof Perro) {
                     System.out.println("* PERRO: " + i.getNombre());
-                    if(((Perro) i).getRevisiones().isEmpty()){
-                        System.err.println("- Este perro no tiene historial de revisiones.");
-                    }else{
-                        System.out.println("Repetida\t Fecha\t Vacuna");
-                        for(HistorialRevisiones h : ((Perro) i).getRevisiones()){
-                            System.out.print(h.isRepetida()+"\t "+h.getFecha()+"\t "+h.isVacuna());
-                        }
-                    }
                 } else if (i instanceof Gato) {
                     System.out.println("* GATO: " + i.getNombre());
                 } else if (i instanceof Loro) {
@@ -76,7 +68,7 @@ public class Inventario {
                     } else {
                         System.out.println("Repetida\t Fecha\t Vacuna");
                         for (HistorialRevisiones h : ((Perro) i).getRevisiones()) {
-                            System.out.println(h.isRepetida() + "\t " + h.getFecha() + "\t " + h.isVacuna());
+                            System.out.println(h.isRepetida() + "\t " + h.getFecha() + "\t " + h.getVacuna());
                         }
                         System.out.println();
                     }
@@ -87,13 +79,53 @@ public class Inventario {
     }
 
 
+    // Método que muestra los datos de un animal concreto (lo buscamos por nombre).
+    public void mostrarAnimal() throws IOException {
+        if(inventario.isEmpty()){
+            System.err.println("* No hay animales en la lista, insértelos por favor.");
+        }else{
+            System.out.println("****** MOSTRAR ANIMAL ******");
+            System.out.println("Introduce nombre: ");
+            String n = bufferReader.leerString();
+            ordenarAnimales(); //Antes de hacer la búsqueda, ordena la lista por orden alfabético.
+            if(buscarAnimal(n)==Integer.MAX_VALUE){
+                System.out.println("- El animal no existe en el inventario.");
+            }else{
+                for(Animal a : inventario){
+                    if(Objects.equals(a.getNombre(), n)){
+                        a.mostrar();   // Mostramos los datos del animal a buscar.
+                        System.out.println();
+                        if (a instanceof Perro) {   // Si es un perro nos muestra el historial si tiene.
+                            if (((Perro) a).getRevisiones().isEmpty()) {
+                                System.out.println("- Este perro no tiene historial de revisiones.");
+                                System.out.println();
+                            } else {
+                                System.out.println("Repetida\t Fecha\t Vacuna");
+                                for (HistorialRevisiones h : ((Perro) a).getRevisiones()) {
+                                    System.out.println(h.isRepetida() + "\t " + h.getFecha() + "\t " + h.getVacuna());
+                                }
+                                System.out.println();
+                            }
+                        }
+                        break; // Si ya mostró sus datos, deja el bucle porque ya no hace falta recorrerlo más.
+                    }
+                }
+            }
+        }
+        System.out.println();
+    }
+
+
     // Método que inserta animales en la lista.
     public void insertarAnimales(){
 
-        // Datos de las revisiones del perro.
+        // Datos de las revisiones del perro con historial.
         Animal a1 = new Perro("Toby", 5, "Vivo", "21/11/2018", "Pastor alemán", false,
-                false, " ", false);
-
+                false, " ", " ");
+        HistorialRevisiones h1 = new HistorialRevisiones(true, "20/12/2018", "Rabia");
+        ArrayList<HistorialRevisiones> aux = new ArrayList<>();
+        aux.add(h1);
+        ((Perro) a1).setRevisiones(aux);
 
         Animal a2 = new Gato("Onix", 2, "Enfermo", "25/06/2021", "Marrón", false);
         Animal a3 =new Gato("Pepe", 2, "Enfermo", "25/06/2021", "Marrón", false);
@@ -120,11 +152,13 @@ public class Inventario {
             String n = bufferReader.leerString();
             ordenarAnimales(); //Antes de hacer la búsqueda, ordena la lista por orden alfabético.
             if(buscarAnimal(n)==Integer.MAX_VALUE){
-                System.out.println("NO EXISTE EL ANIMAL");
+                System.err.println("- El animal no existe en el inventario.");
             }else{
-                System.out.println("EXISTE");
+                inventario.removeIf(animal -> animal.getNombre().equals(n));
+                System.out.println("- El animal fue eliminado del inventario.");
             }
         }
+        System.out.println();
     }
 
 
@@ -157,7 +191,6 @@ public class Inventario {
         }
         return index;
     }
-
 
 
 }

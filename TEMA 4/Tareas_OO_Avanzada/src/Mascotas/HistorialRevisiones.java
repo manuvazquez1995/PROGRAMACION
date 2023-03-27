@@ -6,10 +6,10 @@ public class HistorialRevisiones {
     private boolean repetida;
     private String fecha;
 
-    private boolean vacuna;
+    private String vacuna;
 
 
-    public HistorialRevisiones(boolean repetida, String fecha, boolean vacuna) {
+    public HistorialRevisiones(boolean repetida, String fecha, String vacuna) {
         this.repetida = repetida;
         this.fecha = fecha;
         this.vacuna = vacuna;
@@ -31,11 +31,11 @@ public class HistorialRevisiones {
         this.fecha = fecha;
     }
 
-    public boolean isVacuna() {
+    public String  getVacuna() {
         return vacuna;
     }
 
-    public void setVacuna(boolean vacuna) {
+    public void setVacuna(String vacuna) {
         this.vacuna = vacuna;
     }
 

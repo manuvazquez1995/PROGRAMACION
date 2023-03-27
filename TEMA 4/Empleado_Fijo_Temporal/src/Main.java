@@ -17,7 +17,7 @@ public class Main implements iTeclado {
         while(op!=0){
 
             switch (op){
-                //Opción para gestionar las altas de empleados tanto fijos como temporales.
+                //Gestiona las altas de empleados tanto fijos como temporales.
                 case 1 ->{
                     Gestiones.alta(empleAct);
                     Gestiones.menu();
@@ -25,18 +25,21 @@ public class Main implements iTeclado {
                 }
 
                 case 2 ->{
+                    // Para dar de alta una venta de un empleado temporal (hace búsqueda del mismo).
                     Gestiones.altaVenta(empleAct);
                     Gestiones.menu();
                     op = Integer.parseInt(bf.readLine());
                 }
 
                 case 3 ->{
+                    // Para dar de baja un empleado en activo.
                     Gestiones.baja(empleAct,empleBaja);
                     Gestiones.menu();
                     op = Integer.parseInt(bf.readLine());
                 }
 
                 case 4 ->{
+                    //Para modificar un empleado, sea fijo o temporal (cada tipo de empleado tiene unas opciones distintas).
                     Gestiones.menuModEmpleados();
                     int opMod = Integer.parseInt(bf.readLine());
                     while (opMod!=0){
@@ -63,6 +66,7 @@ public class Main implements iTeclado {
                 }
 
                 case 5 ->{
+                    // Para visualizar los datos de los empleados, tiene 2 opciones.
                     Gestiones.menuVisualizar();
                     int opVisualizar = Integer.parseInt(bf.readLine());
                     while (opVisualizar!=0){
@@ -89,7 +93,10 @@ public class Main implements iTeclado {
                 }
 
                 case 6 ->{
-                    // TODO: FALTA CONSULTAS DE LOS EMPLEADOS TEMPORALES CON MÁS DE 10.000 € EN VENTAS.
+                    // Para visualizar los empleados temporales que tienen ventas totales superiores a 10.000 €.
+                    Gestiones.consultarTemp(empleAct);
+                    Gestiones.menu();
+                    op = Integer.parseInt(bf.readLine());
                 }
 
                 default ->{
