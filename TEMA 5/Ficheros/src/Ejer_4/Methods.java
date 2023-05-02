@@ -1,7 +1,5 @@
 package Ejer_4;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Methods {
@@ -15,7 +13,7 @@ public class Methods {
 
         try {
             // Abrimos el flujo de datos sobre el fichero de guardado.
-            out = new DataOutputStream(new FileOutputStream(rutaFichero));
+            out = new DataOutputStream(new FileOutputStream(rutaFichero, true)); // Este true sirve para no sobrescribir los datos ya existentes en el archivo.
 
             // Escribimos en el fichero los atributos de cada vehículo, no guarda los objetos.
             for(Vehiculo ve : v){
@@ -40,20 +38,64 @@ public class Methods {
     public static void leerVehiculos (String rutaFichero) throws IOException {
 
         // Declaramos el flujo de datos de entrada.
-        DataOutputStream in = null;
+        DataInputStream in = null;
 
-        // Leemos los datos de los clientes, en la misma orden en la que los escribimos.
-        in = new DataOutputStream(new FileOutputStream(rutaFichero));
+        try{
 
-        // TODO: ME QUEDÉ AQUÍ.
+            // Leemos los datos de los clientes, en la misma orden en la que los escribimos.
+            in = new DataInputStream(new FileInputStream(rutaFichero));
+
+            try {
+
+                while(true){
+                    Vehiculo vehiculo = new Vehiculo();
+                    vehiculo.setMatricula(in.readUTF());
+                    vehiculo.setMarca(in.readUTF());
+                    vehiculo.setTamDeposito(in.readDouble());
+                    vehiculo.setModelo(in.readUTF());
+                    vehiculo.show();  // Método que está en la clase vehículo.
+                }
+
+            }catch (EOFException e){
+               //System.err.println("- ERROR: "+e);
+            }
+
+        }finally {
+            if(in != null){
+                in.close();
+            }
+        }
 
 
     }
 
 
 
+    // Método para guardar los datos de un vehículo en el fichero, todo (no guarda objetos, sino sus datos).
+    public static void guardarVehiculos(Vehiculo v, String rutaFichero) throws IOException {
+
+        // Declaramos el flujo de datos de salida, que será el archivo que hace de almacén (datos.dat).
+        DataOutputStream out = null;
+
+        try {
+            // Abrimos el flujo de datos sobre el fichero de guardado.
+            out = new DataOutputStream(new FileOutputStream(rutaFichero, true));
+
+            // Escribimos en el fichero los atributos de cada vehículo, no guarda los objetos.
+            out.writeUTF(v.getMatricula());
+            out.writeUTF(v.getMarca());
+            out.writeDouble(v.getTamDeposito());
+            out.writeUTF(v.getModelo());
 
 
+        }finally {
+            // Cerramos el Stream de salida.
+            if(out != null){
+                out.close();
+            }
+        }
+
+    }
 
 
 

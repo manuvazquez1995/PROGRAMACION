@@ -1,16 +1,17 @@
-package Ejer_4;
+package Ejer_5;
+import java.io.Serializable;
 
-public class Vehiculo {
+public class Vehiculo implements Serializable {  // Para que un objeto de esta clase pueda ser volcado en un fichero de datos con la misma estructura.
 
     private String matricula;
     private String marca;
     private double tamDeposito;
     private String modelo;
 
-    public Vehiculo(){}
+    public Vehiculo() {
+    }
 
-    public Vehiculo(String matricula, String marca, double tamDeposito, String modelo)
-    {
+    public Vehiculo(String matricula, String marca, double tamDeposito, String modelo) {
         this.matricula = matricula;
         this.marca = marca;
         this.tamDeposito = tamDeposito;
@@ -49,8 +50,8 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public void show(){
-        System.out.println(matricula+"\t "+marca+"\t "+tamDeposito+"\t "+modelo);
+    public void show() {
+        System.out.println(matricula + "\t " + marca + "\t " + tamDeposito + "\t " + modelo);
     }
 
 }
