@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="derby">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/lib/derby.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/lib/h2-1.4.200.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/lib/hsqldb.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/lib/mysql-connector-java-8.0.15.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/lib/ojdbc8.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/lib/sqlite-jdbc-3.20.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+  </library>
+</component>
