@@ -1,0 +1,26 @@
+<People>
+  <Person DNI="33999999">
+    <firstname>Joe</firstname>
+    <lastname>Walnes</lastname>
+    <Phone>
+      <code>123</code>
+      <number>1234-456</number>
+    </Phone>
+    <Fax>
+      <code>123</code>
+      <number>9999-999</number>
+    </Fax>
+  </Person>
+  <Person>
+    <firstname>Max</firstname>
+    <lastname>Smith</lastname>
+    <Phone>
+      <code>123</code>
+      <number>7777-456</number>
+    </Phone>
+    <Fax>
+      <code>123</code>
+      <number>8888-999</number>
+    </Fax>
+  </Person>
+</People>

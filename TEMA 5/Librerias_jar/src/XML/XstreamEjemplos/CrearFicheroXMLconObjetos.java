@@ -15,9 +15,7 @@ alumnos
 * que después se insertarán en el fichero Alumnos.xml
 */
 
-
 import com.thoughtworks.xstream.*;
-
 import java.io.*;
 
 public class CrearFicheroXMLconObjetos {

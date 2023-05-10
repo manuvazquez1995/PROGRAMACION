@@ -1,0 +1,12 @@
+<ListadoAlumnos>
+  <DatosAlumno>
+    <dni>77777777W</dni>
+    <nombre>Manuel</nombre>
+    <telefono>666666666</telefono>
+  </DatosAlumno>
+  <DatosAlumno>
+    <dni>5555555W</dni>
+    <nombre>sdasdf</nombre>
+    <telefono>888888888</telefono>
+  </DatosAlumno>
+</ListadoAlumnos>

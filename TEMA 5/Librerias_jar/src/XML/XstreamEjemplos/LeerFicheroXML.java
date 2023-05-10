@@ -14,7 +14,6 @@ package XML.XstreamEjemplos;
 */
 
 import com.thoughtworks.xstream.XStream;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

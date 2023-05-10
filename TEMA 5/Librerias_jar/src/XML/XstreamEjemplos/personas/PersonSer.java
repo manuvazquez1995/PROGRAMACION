@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package XML.XstreamEjemplos;
+package XML.XstreamEjemplos.personas;
 
 /*
 XStream es una interesante y simple libreria para serializar objetos a XML y viceversa.
@@ -33,7 +33,6 @@ Formato se salida alterno. El diseño modular permite otros formatos de salida. 
 */
 
 import com.thoughtworks.xstream.XStream;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -47,12 +46,12 @@ import java.util.List;
  */
 public class PersonSer {
     public static void main (String args []) throws FileNotFoundException{
-        File fXML = new File("ficheros\\PersonaPerson.xml");
-        XStream xstream = new XStream();
+        File fXML = new File("ficheros\\PersonaPerson.xml"); //Crea el fichero si este no existe.
+        XStream xstream = new XStream();  //Stream para xml.
         
         //Para que no de Errores de acceso de Tipos
         //xstream.allowTypes(new Class[] {Person.class});
-        xstream.allowTypes(new Class[] {Person.class,PeopleList.class});
+        xstream.allowTypes(new Class[] {Person.class,PeopleList.class}); //Para registrar las clases, en este caso personas.
         
         //[1] alias opcionales
         xstream.alias("People", PeopleList.class);
