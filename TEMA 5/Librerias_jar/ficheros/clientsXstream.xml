@@ -1,0 +1,38 @@
+<Clientes>
+  <Cliente DNI="111111111A">
+    <firstname>José</firstname>
+    <lastname>González</lastname>
+    <Phone>
+      <code>100</code>
+      <number>100100100</number>
+    </Phone>
+    <Fax>
+      <code>100</code>
+      <number>100100100</number>
+    </Fax>
+  </Cliente>
+  <Cliente DNI="222222222B">
+    <firstname>Jesús</firstname>
+    <lastname>López</lastname>
+    <Phone>
+      <code>200</code>
+      <number>222222222</number>
+    </Phone>
+    <Fax>
+      <code>600</code>
+      <number>222222222</number>
+    </Fax>
+  </Cliente>
+  <Cliente DNI="333333333C">
+    <firstname>Marta</firstname>
+    <lastname>Suárez</lastname>
+    <Phone>
+      <code>300</code>
+      <number>555555555</number>
+    </Phone>
+    <Fax>
+      <code>900</code>
+      <number>555555555</number>
+    </Fax>
+  </Cliente>
+</Clientes>

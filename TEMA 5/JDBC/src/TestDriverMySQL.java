@@ -15,7 +15,7 @@ public class TestDriverMySQL {
         // usuario y clave
         String user = "root";
         String password = "abc123.";
-        String mibase = "sakila";
+        String mibase = "ventas";
         try {
             // una sola cadena de conexión, en un sólo parámetro se concatena el
             // usuario y el password

@@ -1,8 +1,8 @@
 package XML.clientes;
-import XML.XstreamEjemplos.personas.PhoneNumber;
 
 public class Cliente {
 
+    private String dni;
     private String firstname;
     private String lastname;
     private PhoneNumber phone;  // Se utiliza la clase PhoneNumber de personas.
@@ -11,13 +11,21 @@ public class Cliente {
 
     public Cliente(){};
 
-    public Cliente(String firstname, String lastname, PhoneNumber phone, PhoneNumber fax){
+    public Cliente(String dni,String firstname, String lastname, PhoneNumber phone, PhoneNumber fax){
+        this.dni = dni;
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
         this.fax = fax;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
 
     public String getFirstname() {
         return firstname;
@@ -53,7 +61,9 @@ public class Cliente {
 
 
     public String toString(){
-        return "- Cliente{" + "nombre="+firstname+ ", lastname="+lastname+", phone="+phone+", fax="+fax+ '}';
+        return "- Cliente{ Dni="+dni + ", nombre="+firstname+ ", lastname="+lastname+
+                ", phone="+phone.getCode()+"/"+phone.getNumber() +
+                ", fax="+fax.getCode()+"/"+fax.getNumber()+ '}';
     }
 
 }
