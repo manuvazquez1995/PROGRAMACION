@@ -1,0 +1,16 @@
+- HashMap
+- Colas (LPC)
+- Fechas (After/Before)
+
+-Excepciones(sobre todo los ficheros, es obligatorio)
+- Ficheros en general.
+
+- Crear un fichero con la clase File.
+
+- Probar hacer:
+	-> Ejercicio clientes .json con un arrayList.
+	
+
+- Volver a practicar el ejecicio del examen de la 2ªEVAL del veterinario:
+-> Esta vez guardar los veterinarios con sus animales (con su historial) en un fichero.
+-> Crear un fichero, cuyo contenido esté los pacientes de un veterinario concreto, pidiendo su nombre.

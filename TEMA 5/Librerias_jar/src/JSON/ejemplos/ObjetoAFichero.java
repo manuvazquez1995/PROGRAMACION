@@ -40,8 +40,7 @@ public class ObjetoAFichero {
     }
     
     public static void GuardarJSON(String json){
-        try (
-            BufferedWriter bw = new BufferedWriter(new FileWriter("ficheros\\datos_personaConAsig.json"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("ficheros\\datos_personaConAsig.json"))) {
             bw.write(json);
             System.out.println("Fichero creado");
         } catch (IOException ex) {
