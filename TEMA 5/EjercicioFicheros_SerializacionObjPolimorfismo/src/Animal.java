@@ -32,10 +32,13 @@ public abstract class Animal implements Serializable {
 
 
     // Método abstracto que emplearán las subclases para mostrar como se expresan los animales.
-    public abstract void expresar();
+    public abstract String expresar();
 
     // Método que devuelve el tipo de animal que es (Perro/Gato).
     public abstract String getTipo();
+
+    // Método abstracto para mostrar los datos de los animales.
+    public abstract String toString();
 
 
 }

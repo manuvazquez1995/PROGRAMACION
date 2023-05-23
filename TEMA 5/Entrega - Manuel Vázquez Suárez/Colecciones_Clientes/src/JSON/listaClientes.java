@@ -1,4 +1,4 @@
-package JSON.clientes;
+package JSON;
 import  java.util.ArrayList;
 import java.util.List;
 

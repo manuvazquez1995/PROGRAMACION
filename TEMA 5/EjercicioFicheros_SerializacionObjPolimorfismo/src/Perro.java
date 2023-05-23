@@ -20,13 +20,21 @@ public class Perro extends Animal{
     }
 
     @Override
-    public void expresar(){
-        System.out.println("GUAU GUAU");
+    public String expresar(){
+        return "GUAU GUAU";
     }
 
     @Override
     public String getTipo(){
         return "Perro";
+    }
+
+    @Override
+    public String toString(){
+        return "- TIPO: "+getTipo()+"\n" +
+                "NOMBRE: "+getNombre()+"\n" +
+                "EDAD:"+getEdad()+"\n" +
+                "RABO LARGO: "+isRaboLargo();
     }
 
 

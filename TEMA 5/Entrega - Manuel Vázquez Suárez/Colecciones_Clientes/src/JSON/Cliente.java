@@ -52,6 +52,7 @@ public class Cliente {
     }
 
 
+    @Override
     public String toString(){
         return "- Cliente{" + "nombre="+firstname+ ", lastname="+lastname+", phone="+phone+", fax="+fax+ '}';
     }

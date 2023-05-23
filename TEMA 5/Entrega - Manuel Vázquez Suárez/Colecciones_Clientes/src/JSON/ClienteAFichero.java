@@ -16,14 +16,25 @@ public class ClienteAFichero {
         Cliente cliente = new Cliente("Manuel", "Vázquez",
                 new phoneNumber(100, "600111222"),
                 new phoneNumber(110, "900111222"));
+        Cliente cliente2 = new Cliente("Carmen", "Míguez",
+                new phoneNumber(100, "600111222"),
+                new phoneNumber(110, "900111222"));
+        Cliente cliente3 = new Cliente("Paula", "López",
+                new phoneNumber(100, "600111222"),
+                new phoneNumber(110, "900111222"));
+
+        listaClientes lista = new listaClientes();
+        lista.add(cliente);
+        lista.add(cliente2);
+        lista.add(cliente3);
 
 
         // Guardamos el objeto cliente en un archivo.
         try(FileWriter writer = new FileWriter("ficheros\\datos_cliente.json")){
-            gson.toJson(cliente, writer);
+            gson.toJson(lista, writer);
 
             // Generamos la cadena con formato fichero .json.
-            String json = gson.toJson(cliente);
+            String json = gson.toJson(lista);
 
             // Mostramos por pantalla el String que sería el json.
             System.out.println(json);

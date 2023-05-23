@@ -19,13 +19,21 @@ public class Gato extends Animal{
     }
 
     @Override
-    public void expresar(){
-        System.out.println("MIAU MIAU");
+    public String expresar(){
+        return "MIAU MIAU";
     }
 
     @Override
     public String getTipo(){
         return "Gato";
+    }
+
+    @Override
+    public String toString(){
+        return "- TIPO: "+getTipo()+"\n" +
+                "NOMBRE: "+getNombre()+"\n" +
+                "EDAD:"+getEdad()+"\n" +
+                "BIGOTE LARGO: "+isBigoteLargo();
     }
 
 }

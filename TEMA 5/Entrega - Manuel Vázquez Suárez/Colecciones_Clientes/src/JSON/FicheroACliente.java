@@ -39,8 +39,10 @@ public class FicheroACliente {
 
     // Método que le un cliente de un archivo json.
     public static void LeerCliente(Gson gson, String fichero){
-        Cliente cliente = gson.fromJson(fichero, Cliente.class);
-        System.out.println(cliente);
+        listaClientes list = gson.fromJson(fichero, listaClientes.class);
+        for(Cliente l : list.getList()){
+            System.out.println(l.toString());
+        }
     }
 
 
