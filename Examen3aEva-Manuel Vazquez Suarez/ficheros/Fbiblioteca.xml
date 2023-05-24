@@ -1,0 +1,31 @@
+<examen.Biblioteca.POJOS.Biblioteca>
+  <cif>000000000A</cif>
+  <nombre>BibliosUnidas.S.A</nombre>
+  <tf>666555444</tf>
+  <L>
+    <examen.Biblioteca.POJOS.LibrosOcio>
+      <ref>666666-BB</ref>
+      <titulo>Blancanieves</titulo>
+      <precio>30.0</precio>
+      <estado>false</estado>
+      <p>
+        <examen.Biblioteca.POJOS.Prestamos>
+          <fechaPrestamo>2023-05-19</fechaPrestamo>
+          <fechaDevolucion>2023-05-30</fechaDevolucion>
+          <lector>
+            <id>0</id>
+            <dniLector>77777787R</dniLector>
+            <sancion>false</sancion>
+          </lector>
+        </examen.Biblioteca.POJOS.Prestamos>
+      </p>
+    </examen.Biblioteca.POJOS.LibrosOcio>
+    <examen.Biblioteca.POJOS.LibrosTexto>
+      <ref>555555-AA</ref>
+      <titulo>Relatividad General</titulo>
+      <precio>50.0</precio>
+      <estado>true</estado>
+      <especialidad>Ciencia</especialidad>
+    </examen.Biblioteca.POJOS.LibrosTexto>
+  </L>
+</examen.Biblioteca.POJOS.Biblioteca>

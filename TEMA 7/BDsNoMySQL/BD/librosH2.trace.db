@@ -1,0 +1,8 @@
+2023-05-24 20:49:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "LIBROS" ya existe
+Table "LIBROS" already exists; SQL statement:
+CREATE TABLE libros (
+ idLibro  int NOT NULL PRIMARY KEY auto_increment,
+ titulo   VARCHAR(30), 
+ precio   float
+); [42101-200]

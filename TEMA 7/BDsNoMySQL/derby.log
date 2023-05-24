@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed May 24 20:47:01 CEST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0188-4f15-fca4-00000f6f5e20 
+on database directory F:\PROGRAMACION\TEMA 7\BDsNoMySQL\BD\librosApache with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4d7e1886 
+Loaded from file:/F:/PROGRAMACION/TEMA%207/BDsNoMySQL/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=19.0.2+7-44
+user.dir=F:\PROGRAMACION\TEMA 7\BDsNoMySQL
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
